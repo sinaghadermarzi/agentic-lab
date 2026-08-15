@@ -26,6 +26,7 @@ def complete(messages, *, model=None, temperature=0, max_tokens=1000, tools=None
     model = model or os.environ.get("MODEL", DEFAULT_MODEL)
     if tools is not None:
         kw["tools"] = tools
+    kw.setdefault("num_retries", 2)     # ride out transient provider drops (litellm backs off)
     t0 = time.perf_counter()
     response = litellm.completion(model=model, messages=messages,
                                   temperature=temperature, max_tokens=max_tokens, **kw)
