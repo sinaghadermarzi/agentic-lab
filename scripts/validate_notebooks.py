@@ -49,6 +49,11 @@ EXPECTED_CHAPTERS: list[str] = [
     "02-the-tool-loop.ipynb",
     "03-tracing.ipynb",
     "04-evaluation.ipynb",
+    "05-workflows.ipynb",
+    "06-verification.ipynb",
+    "07-multi-agent.ipynb",
+    "08-production-controls.ipynb",
+    "09-security.ipynb",
 ]
 EXPECTED_APPENDICES: list[str] = []
 
