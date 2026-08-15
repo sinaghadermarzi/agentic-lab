@@ -1,0 +1,137 @@
+[
+  {
+    "customer_id": "CUST-01",
+    "name": "Maren Holt",
+    "email": "maren.holt@example.com",
+    "tier": "vip",
+    "signup_date": "2024-03-11",
+    "lifetime_spend_usd": 2140.55,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-02",
+    "name": "Idris Bello",
+    "email": "idris.bello@example.com",
+    "tier": "vip",
+    "signup_date": "2023-07-22",
+    "lifetime_spend_usd": 3180.4,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-03",
+    "name": "Priya Nair",
+    "email": "priya.nair@example.com",
+    "tier": "vip",
+    "signup_date": "2023-11-05",
+    "lifetime_spend_usd": 2760.15,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-04",
+    "name": "Tomas Vega",
+    "email": "tomas.vega@example.com",
+    "tier": "member",
+    "signup_date": "2024-01-19",
+    "lifetime_spend_usd": 890.25,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-05",
+    "name": "Aiko Tanaka",
+    "email": "aiko.tanaka@example.com",
+    "tier": "member",
+    "signup_date": "2024-09-30",
+    "lifetime_spend_usd": 640.8,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-06",
+    "name": "Nadia Farouk",
+    "email": "nadia.farouk@example.com",
+    "tier": "member",
+    "signup_date": "2025-02-14",
+    "lifetime_spend_usd": 720.0,
+    "serial_returner": true
+  },
+  {
+    "customer_id": "CUST-07",
+    "name": "Ravi Menon",
+    "email": "ravi.menon@example.com",
+    "tier": "member",
+    "signup_date": "2023-05-08",
+    "lifetime_spend_usd": 1120.6,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-08",
+    "name": "Elena Sokolova",
+    "email": "elena.sokolova@example.com",
+    "tier": "member",
+    "signup_date": "2025-06-12",
+    "lifetime_spend_usd": 505.3,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-09",
+    "name": "Marcus Bexley",
+    "email": "marcus.bexley@example.com",
+    "tier": "standard",
+    "signup_date": "2025-08-01",
+    "lifetime_spend_usd": 210.45,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-10",
+    "name": "Sofia Ricci",
+    "email": "sofia.ricci@example.com",
+    "tier": "standard",
+    "signup_date": "2024-11-23",
+    "lifetime_spend_usd": 175.0,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-11",
+    "name": "Dylan Okoro",
+    "email": "dylan.okoro@example.com",
+    "tier": "standard",
+    "signup_date": "2026-01-15",
+    "lifetime_spend_usd": 95.5,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-12",
+    "name": "Hana Kovac",
+    "email": "hana.kovac@example.com",
+    "tier": "standard",
+    "signup_date": "2025-04-19",
+    "lifetime_spend_usd": 260.2,
+    "serial_returner": true
+  },
+  {
+    "customer_id": "CUST-13",
+    "name": "Ben Carter",
+    "email": "ben.carter@example.com",
+    "tier": "standard",
+    "signup_date": "2026-03-02",
+    "lifetime_spend_usd": 60.0,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-14",
+    "name": "Yusuf Demir",
+    "email": "yusuf.demir@example.com",
+    "tier": "standard",
+    "signup_date": "2024-06-27",
+    "lifetime_spend_usd": 320.75,
+    "serial_returner": false
+  },
+  {
+    "customer_id": "CUST-15",
+    "name": "Grace Lindqvist",
+    "email": "grace.lindqvist@example.com",
+    "tier": "standard",
+    "signup_date": "2026-05-10",
+    "lifetime_spend_usd": 130.9,
+    "serial_returner": false
+  }
+]
