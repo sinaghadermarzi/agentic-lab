@@ -40,10 +40,10 @@ files, `src/shoplab/rules.py`, and `scripts/check_data.py` must all agree with i
 ### `data/orders.json` — 40 orders
 
 ```json
-{"order_id": "ORD-7301", "customer_id": "CUST-04",
- "items": [{"sku": "LK-1001", "qty": 1, "unit_price_usd": 289.00}],
- "shipping_usd": 12.50, "total_usd": 301.50, "status": "delivered",
- "placed_at": "2026-06-14", "delivered_at": "2026-06-19",
+{"order_id": "ORD-7301", "customer_id": "CUST-01",
+ "items": [{"sku": "LK-1025", "qty": 1, "unit_price_usd": 379.00}],
+ "shipping_usd": 12.50, "total_usd": 391.50, "status": "delivered",
+ "placed_at": "2026-06-03", "delivered_at": "2026-06-08",
  "carrier": "Cascadia Post", "destination_country": "US"}
 ```
 
@@ -90,12 +90,12 @@ uses** (below). The 12 ids and titles, fixed:
 Ticket row:
 
 ```json
-{"ticket_id": "TKT-2201", "order_id": "ORD-7301", "customer_id": "CUST-04",
- "sku": "LK-1001", "qty": 1,
- "reason_text": "The tent arrived three weeks ago and I finally opened the box last night. The zipper is fine, I just do not need it anymore.",
+{"ticket_id": "TKT-2205", "order_id": "ORD-7312", "customer_id": "CUST-07",
+ "sku": "LK-1016", "qty": 1,
+ "reason_text": "I opened the box and used the Torrent boots for one evening indoors, and they pinch at the toes something awful. Everything is repacked with the padding and tags. Please refund my original payment method.",
  "requested_action": "refund", "item_condition": "opened",
- "days_since_delivery": 21, "evidence_photo": false,
- "gold": {"decision": "partial_refund", "policy_id": "pol-restocking", "refund_usd": 260.10}}
+ "days_since_delivery": 18, "evidence_photo": false,
+ "gold": {"decision": "partial_refund", "policy_id": "pol-restocking", "refund_usd": 170.99}}
 ```
 
 - `ticket_id`: `TKT-2201`–`TKT-2220` train, `TKT-2221`–`TKT-2232` dev, `TKT-2233`–`TKT-2240`

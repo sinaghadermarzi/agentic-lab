@@ -43,7 +43,13 @@ CITATIONS_JSON = ROOT / "docs" / "citations.json"
 
 # Filled in later phases as notebooks land. Discovered notebooks are validated
 # even when unlisted; a listed file that is missing on disk is a failure.
-EXPECTED_CHAPTERS: list[str] = []
+EXPECTED_CHAPTERS: list[str] = [
+    "00-orientation-and-the-ops-desk.ipynb",
+    "01-the-model-boundary.ipynb",
+    "02-the-tool-loop.ipynb",
+    "03-tracing.ipynb",
+    "04-evaluation.ipynb",
+]
 EXPECTED_APPENDICES: list[str] = []
 
 # Chapter number ("NN") -> URLs / arXiv ids that MUST appear in that chapter.

@@ -38,6 +38,9 @@ FROM_IMPORT_RE = re.compile(
 BARE_IMPORT_RE = re.compile(
     rf"^\s*import\s+((?:{ROOT_ALT})(?:\.[A-Za-z_]\w*)*)\s*(?:as\s+\w+)?\s*$")
 IDENT_RE = re.compile(r"^[A-Za-z_]\w*$")
+# String literals on a line: dotted names inside them are data, not API usage
+# (e.g. the OTLP attribute keys "openinference.span.kind" in shoplab.trace).
+STRING_RE = re.compile(r"""(['"])(?:\\.|(?!\1).)*\1""")
 
 failures: list[str] = []
 
@@ -65,7 +68,7 @@ def collect_names(text: str, origin: str, names: dict[str, set[str]]) -> None:
         m = BARE_IMPORT_RE.match(line)
         if m:
             names.setdefault(m.group(1), set()).add(origin)
-        for m in DOTTED_RE.finditer(line):
+        for m in DOTTED_RE.finditer(STRING_RE.sub('""', line)):
             names.setdefault(m.group(0), set()).add(origin)
 
 
