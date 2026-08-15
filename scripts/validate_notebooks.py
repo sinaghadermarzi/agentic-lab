@@ -65,7 +65,15 @@ EXPECTED_CHAPTERS: list[str] = [
     "18-crewai.ipynb",
     "19-capstone.ipynb",
 ]
-EXPECTED_APPENDICES: list[str] = []
+EXPECTED_APPENDICES: list[str] = [
+    "A-agno.ipynb",
+    "A-aws-strands.ipynb",
+    "A-google-adk.ipynb",
+    "A-llamaindex-workflows.ipynb",
+    "A-microsoft-agent-framework.ipynb",
+    "A-openai-agents-sdk.ipynb",
+    "A-pydantic-ai.ipynb",
+]
 
 # Chapter number ("NN") -> URLs / arXiv ids that MUST appear in that chapter.
 # Filled in later phases alongside the chapters themselves.
