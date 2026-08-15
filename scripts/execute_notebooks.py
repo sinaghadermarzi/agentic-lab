@@ -8,8 +8,13 @@ Usage:
 --all runs the numbered chapters in order, then the appendices. Execution is
 serial only (the notebooks share one OpenRouter budget and one Phoenix server).
 
-Each notebook runs in a fresh python3 kernel with the repo root as its working
-directory (timeout 300 s per cell). Wall time is measured directly; cost is
+Each notebook runs in a fresh kernel with the repo root as its working
+directory (timeout 300 s per cell). The kernel is python3 by default; a few
+notebooks that need an isolated framework venv are mapped to their registered
+kernel in KERNEL_MAP (keyed by notebook stem), and --kernel <name> overrides
+the kernel for a single run. The committed .ipynb keeps its python3 kernelspec
+either way (strip_outputs freezes it) -- only execution swaps kernels. Wall
+time is measured directly; cost is
 measured as the delta of OpenRouter credits (GET /api/v1/key, field
 data.usage) around the run and is null when the endpoint or the key is
 unavailable. A cell error is recorded with a short traceback and the build
@@ -41,6 +46,17 @@ OPENROUTER_KEY_URL = "https://openrouter.ai/api/v1/key"
 CELL_TIMEOUT_S = 300
 ERROR_MAX_LINES = 12
 ERROR_MAX_CHARS = 1500
+
+# Notebooks whose framework conflicts with the main stack execute under an
+# isolated venv's registered kernel (see docs/CONVENTIONS.md "fresh venv +
+# registered kernel"). Keyed by notebook stem; the committed kernelspec stays
+# python3, only the execution kernel changes.
+KERNEL_MAP = {
+    "18-crewai": "agentic-lab-crewai",
+    "A-aws-strands": "agentic-lab-strands",
+    "A-openai-agents-sdk": "agentic-lab-openai-agents",
+}
+DEFAULT_KERNEL = "python3"
 
 
 def openrouter_usage() -> float | None:
@@ -83,17 +99,18 @@ def discover_all() -> list[Path]:
     return chapters + appendices
 
 
-def run_one(path: Path, keep_outputs: bool) -> dict:
+def run_one(path: Path, keep_outputs: bool, kernel: str | None = None) -> dict:
     rel = str(path.resolve().relative_to(ROOT)) if path.resolve().is_relative_to(ROOT) else str(path)
     raw = path.read_bytes()
     nb = nbformat.reads(raw.decode("utf-8"), as_version=4)
+    kernel_name = kernel or KERNEL_MAP.get(path.stem, DEFAULT_KERNEL)
 
     usage_before = openrouter_usage()
     start = time.time()
     status, error = "ok", None
     try:
         client = NotebookClient(nb, timeout=CELL_TIMEOUT_S,
-                                kernel_name="python3",
+                                kernel_name=kernel_name,
                                 resources={"metadata": {"path": str(ROOT)}})
         client.execute()
     except Exception as e:
@@ -132,10 +149,16 @@ def main() -> None:
     parser.add_argument("--keep-outputs", action="store_true",
                         help="write the executed notebook (with outputs) back "
                              "to disk; default leaves files untouched")
+    parser.add_argument("--kernel", metavar="NAME", default=None,
+                        help="override the execution kernel for this run "
+                             "(single-notebook use); default is KERNEL_MAP by "
+                             "notebook stem, else python3")
     args = parser.parse_args()
 
     if args.all and args.notebooks:
         parser.error("pass either --all or explicit notebook paths, not both")
+    if args.kernel and args.all:
+        parser.error("--kernel overrides a single-notebook run; not usable with --all")
     if not args.all and not args.notebooks:
         parser.print_usage(sys.stderr)
         print("error: nothing to execute -- pass notebook paths or --all",
@@ -159,8 +182,10 @@ def main() -> None:
     ARTIFACTS.mkdir(exist_ok=True)
     any_error = False
     for path in paths:
-        print(f"executing {path} ...", flush=True)
-        record = run_one(path, keep_outputs=args.keep_outputs)
+        eff_kernel = args.kernel or KERNEL_MAP.get(path.stem, DEFAULT_KERNEL)
+        suffix = f" [kernel: {eff_kernel}]" if eff_kernel != DEFAULT_KERNEL else ""
+        print(f"executing {path} ...{suffix}", flush=True)
+        record = run_one(path, keep_outputs=args.keep_outputs, kernel=args.kernel)
         with open(REPORT, "a", encoding="utf-8") as f:
             f.write(json.dumps(record) + "\n")
         cost = record["cost_usd"]

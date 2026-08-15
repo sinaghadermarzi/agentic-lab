@@ -30,7 +30,11 @@ sys.path.insert(0, str(ROOT))           # obs.py lives at the repo root
 sys.path.insert(0, str(ROOT / "src"))   # shoplab is not pip-installed yet
 
 ROOTS = ("litellm", "mcp", "a2a", "langgraph", "langchain", "smolagents",
-         "deepagents", "phoenix", "openinference", "obs", "shoplab")
+         "deepagents", "phoenix", "openinference", "obs", "shoplab",
+         # framework taught in its own isolated venv: not present in the main
+         # venv, so its dotted names resolve to SKIP (extra not installed)
+         # rather than being silently uncollected. See docs/CONVENTIONS.md.
+         "crewai")
 ROOT_ALT = "|".join(ROOTS)
 DOTTED_RE = re.compile(rf"\b(?:{ROOT_ALT})(?:\.[A-Za-z_]\w*)+")
 FROM_IMPORT_RE = re.compile(

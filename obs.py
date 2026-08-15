@@ -70,6 +70,12 @@ def _spawn(cmd, env=None):
 def enable_phoenix(port: int = 6006):
     """Find or start Phoenix, then route LiteLLM traces to it under the dated project."""
 
+    import importlib.util
+    if importlib.util.find_spec("phoenix") is None:     # isolated framework venvs omit it
+        print("obs: phoenix not installed in this environment — tracing skipped "
+              "(this notebook runs in an isolated venv; see the install box)")
+        return None
+
     def is_ours(p):                                     # any healthy Phoenix will do:
         body = _http_get(f"http://127.0.0.1:{p}")       # instances share ~/.phoenix data
         return body is not None and b"phoenix" in body.lower()
