@@ -80,9 +80,14 @@ def enable_phoenix(port: int = 6006):
 
     chosen = _find_or_start("Phoenix", start, is_ours, port)
     if chosen is not None:
-        from phoenix.otel import register
+        import warnings
 
-        register(project_name=EXPERIMENT, auto_instrument=True,
+        with warnings.catch_warnings():     # tqdm's "IProgress not found" hint
+            warnings.filterwarnings("ignore", message="IProgress not found")
+            from phoenix.otel import register
+
+        # verbose=False: register's banner is noise here (and uses emoji).
+        register(project_name=EXPERIMENT, auto_instrument=True, verbose=False,
                  endpoint=f"http://127.0.0.1:{chosen}/v1/traces")
         print(f"obs: Phoenix tracing on — project {EXPERIMENT!r}")
     return chosen
