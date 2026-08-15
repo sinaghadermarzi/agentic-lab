@@ -1,0 +1,62 @@
+[
+  {
+    "id": "pol-returns",
+    "title": "Returns Window",
+    "text": "Larkspur Outfitters accepts returns within 30 days of delivery. If your order arrived and you changed your mind, ordered the wrong thing, or simply no longer need the item, start a return any time in the first 30 days and we will refund the item price to your original payment method. Unopened items in original packaging receive a full refund. After the 30-day window closes we can no longer accept a change-of-mind return, and requests made more than 30 days after delivery are denied. The window is counted from the delivery date, not the order date. Defective items are covered separately, and for longer, under our warranty policy."
+  },
+  {
+    "id": "pol-restocking",
+    "title": "Refund Method & Restocking Fee",
+    "text": "Refunds go back to the original payment method within five business days of approval. Unopened items are refunded in full. If you opened the box or used the item, a 10% restocking fee is deducted, so an opened item is refunded at 90% of the item price. The 10% restocking fee is waived for vip customers, who always receive a full refund on opened items. The fee is calculated per item on the item price, never on shipping. Choosing store credit instead of a card refund also waives the restocking fee."
+  },
+  {
+    "id": "pol-damaged",
+    "title": "Damaged in Transit",
+    "text": "If your order arrived damaged - a crushed box, a cracked frame, bent poles, a bottle that leaked in the carton - tell us within 30 days of delivery and we will make it right. For any damaged or defective claim over $75 we require a photo of the item and its packaging before we can approve it; claims over $75 without a photo are denied. Approved damaged-in-transit claims receive a full refund of the item price plus a full refund of the original shipping charge. Keep the packaging until the claim is resolved in case the carrier requests an inspection."
+  },
+  {
+    "id": "pol-defective",
+    "title": "Defective Items & Warranty",
+    "text": "Every product we sell carries a 365-day warranty against manufacturing defects, counted from the delivery date. If your gear stopped working, a zipper broke, a seam split, a buckle snapped, or the item is otherwise faulty in normal use, contact us within 365 days and we will refund the item price or send a replacement, whichever you prefer. Defective claims over $75 need a photo showing the fault. After 365 days the warranty has expired and defect claims are denied. Wear and tear, misuse, and accident damage are not manufacturing defects and are not covered."
+  },
+  {
+    "id": "pol-exchanges",
+    "title": "Exchanges & Replacements",
+    "text": "Want the same item again instead of your money back? We are happy to send a replacement. Request a replacement within the 30-day return window and we will ship the same SKU at no charge once the original is on its way back to us. Exchanges for a different size or color work the same way: send the original back, and we ship the swap as soon as the carrier scan shows it moving. Replacements for defective gear are handled under warranty instead and do not wait for the return to arrive. Every replacement order ships free by standard ground."
+  },
+  {
+    "id": "pol-store-credit",
+    "title": "Store Credit",
+    "text": "Instead of a refund to your card, you can take any eligible return as Larkspur store credit. Store credit is issued for the full item value - the restocking fee is waived when you choose credit, even on opened items. Credit lands in your account within one business day of approval and never expires. Apply it to any future order at checkout and combine it with any payment method. Credit equals the item price paid; original shipping is not converted to credit. Store credit requests follow the same 30-day return window as card refunds."
+  },
+  {
+    "id": "pol-shipping",
+    "title": "Shipping & Carriers",
+    "text": "We ship from a single warehouse in Bend, Oregon with three carriers: Cascadia Post for standard parcels, Bluebird Express for expedited orders, and TruckIt for oversized freight such as large tents and cargo haulers. Standard shipping is $5.95, expedited is $12.50, freight is $24.00, and seasonal promotions sometimes ship free. Most orders leave the dock within one business day, and tracking is emailed at carrier pickup. Typical delivery times: Cascadia Post three to six business days, Bluebird Express two, TruckIt five to eight. If tracking has not moved for seven days, contact us and we will open a trace with the carrier."
+  },
+  {
+    "id": "pol-international",
+    "title": "International Returns",
+    "text": "We ship internationally to Canada, Germany, Japan, and Australia. International returns follow the same 30-day window, but you arrange and pay the return shipping unless the item arrived damaged or defective. Mark the customs declaration as returned merchandise so the parcel is not assessed import duty a second time; we cannot refund customs fees, duties, or taxes collected by your country. Refunds are issued in US dollars to the original payment method, and your bank sets the exchange rate. Allow extra transit time: an international return can take two to four weeks to reach the warehouse."
+  },
+  {
+    "id": "pol-hazmat",
+    "title": "Battery & Hazmat Shipping",
+    "text": "Products that contain lithium batteries are classed as hazardous materials for transport. Lithium battery items ship by ground only; carriers will not accept them for air transport, so expedited air shipping is unavailable for these SKUs and international delivery can be slower. When returning a battery item, keep the battery installed in the device, reuse the original packaging with its battery warning label, and ship it ground. Never mail a swollen, punctured, or leaking battery - contact us for safe disposal instructions instead, and we will process your refund without the physical return."
+  },
+  {
+    "id": "pol-loyalty",
+    "title": "Loyalty Tiers",
+    "text": "Larkspur has three loyalty tiers: standard, member, and vip. Everyone starts at standard, member status comes with an account in good standing, and vip is by invitation for our most frequent customers. Vip customers enjoy free expedited shipping, and the 10% restocking fee on opened items is waived for vip - a vip returning an opened item receives a full refund. Members get early access to seasonal drops. Tier status is applied automatically when a return is processed; there is nothing to claim. Tiers never change the return window or the warranty, which are the same for everyone."
+  },
+  {
+    "id": "pol-fraud",
+    "title": "Fraud & Abuse Escalation",
+    "text": "A small number of claims need a human before any money moves. Any unevidenced damage claim over $300 - a damaged or defective claim over $300 with no photo - is escalated to fraud review rather than approved or denied automatically. Accounts flagged for serial returns are likewise escalated: every ticket from a flagged serial returner goes to fraud review regardless of amount or condition. Escalation is not an accusation; a specialist verifies the claim, may request more evidence, and then decides. Most escalated tickets resolve within two business days."
+  },
+  {
+    "id": "pol-price-adjust",
+    "title": "Price Adjustments",
+    "text": "If the price drops on an item you bought, we will refund the difference. Request a price adjustment within 14 days of your order date and we send the gap between what you paid and the new lower price back to your original payment method. One price adjustment per item. Price drops after 14 days, clearance and flash-sale pricing, and competitor prices are not matched. A price adjustment is not a return: you keep the item, and it does not affect your return window. To request one, reply to your order confirmation email with your order number."
+  }
+]
