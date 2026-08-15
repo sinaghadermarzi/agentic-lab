@@ -12,8 +12,16 @@ Submodules so far:
 - ``loop`` -- the tool-calling agent loop (``run_agent`` -> ``AgentResult``)
 - ``trace`` -- hand-rolled spans, trace trees, and OTLP export (``Tracer``)
 - ``evals`` -- ticket scoring and the run/compare harness (``score_ticket``)
+- ``verify`` -- catching a wrong answer before it ships: LLM-as-judge
+  (``judge``), the evaluator-optimizer loop (``refine_until``), and the cheap
+  deterministic ``check_decision``
+- ``controls`` -- run guardrails: the ``Budget`` ceiling, ``Checkpoint``
+  save/load, and ``require_approval`` human-in-the-loop gates
+- ``security`` -- chapter 09 prompt-injection lab: ``get_reviews``/``read_email``
+  (attacker-controlled text, labels hidden), ``scoped_tools`` least-privilege
+  toolsets, and ``attack_rate``/``run_injection_trial`` for measuring defenses
 
-# Later chapters add more submodules (controls, context, ...).
+# Later chapters add more submodules (context, ...).
 
 No submodule is imported here: ``import shoplab`` stays cheap and
 dependency-free, and each submodule is imported explicitly where needed.
