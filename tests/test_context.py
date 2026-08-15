@@ -252,3 +252,13 @@ def test_run_subagent_passes_through_max_steps(monkeypatch):
     out = run_subagent("loop", tools, max_steps=2)
     assert out == {"answer": None, "steps": 2, "stop_reason": "max_steps"}
     assert len(fake.calls) == 2
+
+
+def test_offload_survives_numbering_gaps(tmp_path):
+    d = tmp_path / "off"
+    d.mkdir()
+    (d / "blob-0.txt").write_text("zero")
+    (d / "blob-2.txt").write_text("keep me")
+    h = offload("new content", tag="blob", dir=str(d))
+    assert h["ref"].endswith("blob-3.txt")            # max+1, not count
+    assert (d / "blob-2.txt").read_text() == "keep me"  # nothing overwritten

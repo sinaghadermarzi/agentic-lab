@@ -134,3 +134,12 @@ def test_save_load_and_compare_runs(capsys):
     finally:
         for name in (name_a, name_b):
             (RUNS_DIR / f"{name}.json").unlink(missing_ok=True)
+
+
+def test_score_ticket_nonnumeric_amount_is_wrong_not_fatal():
+    gold = {"decision": "partial_refund", "policy_id": "pol-restocking", "refund_usd": 170.99}
+    for bad in ("170.99", "$170.99", True, [170.99]):
+        s = score_ticket({"decision": "partial_refund", "policy_id": "pol-restocking",
+                          "refund_usd": bad}, gold)
+        assert s["amount_correct"] is False and s["exact"] is False
+        assert s["decision_correct"] is True          # the other axes still score

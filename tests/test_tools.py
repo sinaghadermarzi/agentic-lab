@@ -161,3 +161,14 @@ def test_to_openai_tools_shape():
         fn = item["function"]
         assert set(fn) == {"name", "description", "parameters"}
         assert fn["parameters"] is tools[fn["name"]].params
+
+
+def test_calc_bounds_exponentiation():
+    import pytest
+    with pytest.raises(ValueError):
+        calc("9**9**9")                     # memory bomb must be rejected, not attempted
+    with pytest.raises(ValueError):
+        calc("123456789**2")                # oversized base
+    with pytest.raises(ValueError):
+        calc("1+" * 150 + "1")              # oversized expression
+    assert calc("2**8") == 256.0            # ordinary powers still work

@@ -12,6 +12,7 @@ intermediate turns.
 """
 
 import os
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -60,15 +61,19 @@ class ContextLedger:
 def offload(content: str, *, tag="blob", dir="artifacts/offload") -> dict:
     """Write a big blob to ``<dir>/<tag>-<n>.txt`` and return a small handle.
 
-    ``n`` is the count of existing ``<tag>-*.txt`` files, so numbering is
-    deterministic (no random, no timestamps). The handle
+    ``n`` is one past the highest existing ``<tag>-<n>.txt`` suffix, so numbering
+    is deterministic (no random, no timestamps) and a deleted artifact can never
+    make a later offload overwrite a kept one. The handle
     ``{"ref", "chars", "preview"}`` is what stays in the agent's context in place
     of the content; ``load_offload`` fetches the full text back on demand."""
     d = Path(dir)
     d.mkdir(parents=True, exist_ok=True)
-    n = len(list(d.glob(f"{tag}-*.txt")))
-    path = d / f"{tag}-{n}.txt"
-    path.write_text(content, encoding="utf-8")
+    taken = [int(m.group(1)) for m in
+             (re.fullmatch(rf"{re.escape(tag)}-(\d+)\.txt", p.name)
+              for p in d.glob(f"{tag}-*.txt")) if m]
+    path = d / f"{tag}-{max(taken, default=-1) + 1}.txt"
+    with open(path, "x", encoding="utf-8") as f:    # exclusive create: never overwrite
+        f.write(content)
     return {"ref": str(path), "chars": len(content), "preview": content[:120]}
 
 

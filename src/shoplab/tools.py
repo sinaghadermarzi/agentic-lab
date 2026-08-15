@@ -40,16 +40,27 @@ class Ledger:
         return entry
 
 
+def _pow(a, b):
+    # A model-facing calculator must not be a memory bomb: 9**9**9 would try to
+    # materialize an astronomically large integer before anyone could catch it.
+    if abs(b) > 16 or abs(a) > 1e8:
+        raise ValueError("calc: exponent out of range")
+    return operator.pow(a, b)
+
+
 _OPS = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul,
-        ast.Div: operator.truediv, ast.Pow: operator.pow}
+        ast.Div: operator.truediv, ast.Pow: _pow}
 
 
 def calc(expr: str) -> float:
     """Evaluate plain arithmetic by walking the AST -- never ``eval``.
 
     Allowed: int/float literals, ``+ - * / **``, unary minus, parentheses.
-    Anything else (names, calls, comparisons, ...) raises ValueError.
+    Anything else (names, calls, comparisons, ...) raises ValueError, as do
+    oversized expressions and exponents (tool inputs are untrusted -- ch09).
     """
+    if len(expr) > 200:
+        raise ValueError("calc: expression too long")
     def walk(node):
         if isinstance(node, ast.Constant) and type(node.value) in (int, float):
             return node.value
