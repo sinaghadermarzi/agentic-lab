@@ -1,0 +1,370 @@
+[
+  {
+    "url": "https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/",
+    "kind": "blog",
+    "claim": "IBM's Agent Communication Protocol (ACP) officially merged into the A2A project under the Linux Foundation (announced 2025-08-29).",
+    "fetched_at": "2026-08-15",
+    "excerpt": "ACP is officially merging with the A2A under the Linux Foundation",
+    "title": "ACP Joins Forces with A2A - LFAI & Data"
+  },
+  {
+    "url": "https://www.anthropic.com/engineering/building-effective-agents",
+    "kind": "blog",
+    "claim": "Anthropic's pattern catalog distinguishes workflows (predefined code paths) from agents and names routing, parallelization, orchestrator-workers, and evaluator-optimizer as the core workflow patterns.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "systems where LLMs and tools are orchestrated through predefined code paths",
+    "title": "Building Effective AI Agents"
+  },
+  {
+    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+    "kind": "blog",
+    "claim": "Defines context engineering as curating and maintaining the optimal set of tokens available to an agent during inference.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "curating and maintaining the optimal set of tokens (information) during LLM inference",
+    "title": "Effective context engineering for AI agents"
+  },
+  {
+    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+    "kind": "blog",
+    "claim": "Anthropic's Research feature uses an orchestrator-workers architecture: a lead agent delegates to specialized subagents running in parallel.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "lead agent coordinates the process while delegating to specialized subagents that operate in parallel",
+    "title": "How we built our multi-agent research system"
+  },
+  {
+    "url": "https://adk.dev/",
+    "kind": "docs",
+    "claim": "Official Google Agent Development Kit docs (google.github.io/adk-docs redirects here): an open-source framework for building and deploying multi-agent systems.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "ADK is the open-source agent development framework that lets you build, debug, and deploy reliable AI agents at enterprise scale",
+    "title": "Agent Development Kit (ADK)"
+  },
+  {
+    "url": "https://agent-network-protocol.com/",
+    "kind": "docs",
+    "claim": "ANP (Agent Network Protocol) is an open-source protocol for secure, decentralized communication between AI agents.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "ANP (Agent Network Protocol) is an open-source agent communication protocol designed for secure, decentralized communication between AI agents.",
+    "title": "Agent Network Protocol"
+  },
+  {
+    "url": "https://agentclientprotocol.com/get-started/introduction",
+    "kind": "docs",
+    "claim": "Zed's Agent Client Protocol (ACP) standardizes communication between code editors/IDEs and coding agents.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "standardizes communication between code editors/IDEs and coding agents",
+    "title": "Introduction - Agent Client Protocol"
+  },
+  {
+    "url": "https://agntcy.org/",
+    "kind": "docs",
+    "claim": "AGNTCY is an open-source 'Internet of Agents' stack for cross-vendor agent collaboration via discovery, identity, messaging, and observability.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "AGNTCY delivers an open-source stack enabling AI agents to collaborate across vendors and frameworks through discovery, identity, messaging, and observability",
+    "title": "AGNTCY.org - Building the Internet of Agents (IoA)"
+  },
+  {
+    "url": "https://ap2-protocol.org/",
+    "kind": "docs",
+    "claim": "AP2 (Agent Payments Protocol, led by Google) enables AI agents to make payments on behalf of users safely and securely.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "enabling gen AI agents to make payments on behalf of users, safely, securely, and in a decentralized and privacy protecting manner",
+    "title": "AP2 - Agent Payments Protocol Documentation"
+  },
+  {
+    "url": "https://arize.com/docs/phoenix",
+    "kind": "docs",
+    "claim": "Arize Phoenix is an open-source LLM tracing/observability platform whose phoenix.otel register() call sets up OpenTelemetry with auto-instrumentation (OpenInference).",
+    "fetched_at": "2026-08-15",
+    "excerpt": "collapses raw OpenTelemetry setup into a single register() call, with auto-instrumentation discovery and Phoenix-aware defaults",
+    "title": "What is Arize Phoenix?"
+  },
+  {
+    "url": "https://developers.llamaindex.ai/python/llamaagents/workflows/",
+    "kind": "docs",
+    "claim": "Official LlamaIndex Workflows docs (docs.llamaindex.ai workflow guide redirects here): event-driven, step-based orchestration of execution flow.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "A workflow is an event-driven, step-based way to control the execution flow of an application",
+    "title": "LlamaIndex Workflows - Introduction"
+  },
+  {
+    "url": "https://docs.ag-ui.com/introduction",
+    "kind": "docs",
+    "claim": "AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "standardizes how AI agents connect to user-facing applications",
+    "title": "AG-UI Overview - Agent User Interaction Protocol"
+  },
+  {
+    "url": "https://docs.agno.com/",
+    "kind": "docs",
+    "claim": "Official Agno docs: an SDK for building agents, teams, and workflows, with AgentOS to run them in production.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Use the SDK to build agents, teams, and workflows, AgentOS to run them in production",
+    "title": "Welcome to Agno"
+  },
+  {
+    "url": "https://docs.crewai.com/",
+    "kind": "docs",
+    "claim": "Official CrewAI docs: build collaborative AI agents organized into crews and flows.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Build collaborative AI agents, crews, and flows",
+    "title": "CrewAI Documentation"
+  },
+  {
+    "url": "https://docs.langchain.com/oss/python/deepagents/overview",
+    "kind": "docs",
+    "claim": "Official deepagents docs: an agent harness with built-in file-system context management, subagent spawning, task planning, and long-term memory.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "built-in capabilities for file systems for context management, subagent-spawning, and long-term memory",
+    "title": "Deep Agents overview - Docs by LangChain"
+  },
+  {
+    "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+    "kind": "docs",
+    "claim": "LangGraph's interrupt mechanism pauses graph execution for human-in-the-loop input and resumes from where it stopped.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Interrupts allow you to pause graph execution at specific points and wait for external input before continuing",
+    "title": "Interrupts - Docs by LangChain"
+  },
+  {
+    "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+    "kind": "docs",
+    "claim": "Official LangGraph docs: a low-level orchestration framework and runtime for long-running, stateful agents.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "low-level orchestration framework and runtime for building, managing, and deploying long-running, stateful agents",
+    "title": "LangGraph overview - Docs by LangChain"
+  },
+  {
+    "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+    "kind": "docs",
+    "claim": "LangGraph's persistence layer is built on checkpointers (short-term memory) and stores (long-term memory).",
+    "fetched_at": "2026-08-15",
+    "excerpt": "persistence layer gives agents short-term memory through checkpointers and long-term memory through stores",
+    "title": "Persistence - Docs by LangChain"
+  },
+  {
+    "url": "https://docs.litellm.ai/docs/providers",
+    "kind": "docs",
+    "claim": "LiteLLM routes calls by provider-prefixed model strings: the provider segment of the model string selects the backend endpoint.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Selecting openai as the provider routes your request to an OpenAI-compatible endpoint",
+    "title": "Providers - LiteLLM"
+  },
+  {
+    "url": "https://docs.litellm.ai/docs/providers/openrouter",
+    "kind": "docs",
+    "claim": "LiteLLM calls OpenRouter models via the openrouter/ model-string prefix.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "openrouter/openai/gpt-3.5-turbo",
+    "title": "OpenRouter - LiteLLM"
+  },
+  {
+    "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+    "kind": "docs",
+    "claim": "Prompt injection is LLM01 in the OWASP Top 10 for LLM Applications / GenAI Security Project.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "LLM01:2025 Prompt Injection",
+    "title": "LLM01:2025 Prompt Injection - OWASP Gen AI Security Project"
+  },
+  {
+    "url": "https://github.com/a2aproject/a2a-python",
+    "kind": "docs",
+    "claim": "The official A2A Python SDK (a2a-sdk on PyPI) for running agentic applications as A2A servers.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "A Python library for running agentic applications as A2A Servers",
+    "title": "A2A Python SDK - README"
+  },
+  {
+    "url": "https://github.com/modelcontextprotocol/python-sdk",
+    "kind": "docs",
+    "claim": "The official MCP Python SDK repo; its README states that pip install mcp now installs the reworked 2.x line, so projects on the 1.x API should pin mcp<2 until migrated.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Since `pip install mcp` now installs 2.x, keep a `<2` upper bound on your requirement (for example `mcp>=1.28,<2`) until you've migrated.",
+    "title": "MCP Python SDK - README"
+  },
+  {
+    "url": "https://github.com/modelcontextprotocol/python-sdk/tree/v1.x",
+    "kind": "docs",
+    "claim": "The maintained v1.x branch of the MCP Python SDK provides the FastMCP server API with the stdio transport (the API a mcp<2 pin resolves to).",
+    "fetched_at": "2026-08-15",
+    "excerpt": "from mcp.server.fastmcp import FastMCP",
+    "title": "MCP Python SDK (v1.x branch) - README"
+  },
+  {
+    "url": "https://huggingface.co/docs/smolagents/guided_tour",
+    "kind": "docs",
+    "claim": "The smolagents guided tour documents CodeAgent, which generates tool calls as Python code snippets instead of JSON.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "generates tool calls as Python code snippets",
+    "title": "Agents - Guided tour - smolagents"
+  },
+  {
+    "url": "https://huggingface.co/docs/smolagents/index",
+    "kind": "docs",
+    "claim": "Official smolagents docs: a minimal library whose first-class CodeAgent writes its actions in code.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "CodeAgent writes its actions in code (as opposed to “agents being used to write code”) to invoke tools or perform computations",
+    "title": "smolagents - Hugging Face"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/agent-framework/overview/",
+    "kind": "docs",
+    "claim": "Microsoft Agent Framework combines AutoGen's agent abstractions with Semantic Kernel's enterprise features plus graph-based workflows.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Agent Framework combines AutoGen's simple agent abstractions with Semantic Kernel's enterprise features",
+    "title": "Microsoft Agent Framework Overview | Microsoft Learn"
+  },
+  {
+    "url": "https://openai.github.io/openai-agents-python/",
+    "kind": "docs",
+    "claim": "Official OpenAI Agents SDK (Python) docs: a lightweight agent package with very few abstractions.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "build agentic AI apps in a lightweight, easy-to-use package with very few abstractions",
+    "title": "OpenAI Agents SDK"
+  },
+  {
+    "url": "https://openrouter.ai/docs/quickstart",
+    "kind": "docs",
+    "claim": "OpenRouter provides access to hundreds of AI models through a single API endpoint (one key, many models).",
+    "fetched_at": "2026-08-15",
+    "excerpt": "OpenRouter gives you access to hundreds of AI models through a single API endpoint",
+    "title": "OpenRouter Quickstart Guide"
+  },
+  {
+    "url": "https://pydantic.dev/docs/ai/overview/",
+    "kind": "docs",
+    "claim": "Official Pydantic AI docs (ai.pydantic.dev redirects here): a typed, extensible agent loop where every model is a string swap away.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Pydantic AI is the Python AI SDK: a typed, extensible agent loop with every model a string swap away",
+    "title": "Pydantic AI | Pydantic Docs"
+  },
+  {
+    "url": "https://strandsagents.com/",
+    "kind": "docs",
+    "claim": "Official AWS Strands Agents site: a model-driven, open-source SDK for building production AI agents in a few lines of code.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Build production-ready AI agents in a few lines of code. Model-driven, open source",
+    "title": "Strands Agents - Open Source AI Agent SDK for Python & TypeScript"
+  },
+  {
+    "url": "https://arxiv.org/abs/2210.03629",
+    "kind": "paper",
+    "claim": "ReAct introduces the pattern of interleaving reasoning traces with task-specific actions (the reason-act loop most agent frameworks implement).",
+    "fetched_at": "2026-08-15",
+    "excerpt": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "arxiv": "2210.03629"
+  },
+  {
+    "url": "https://arxiv.org/abs/2302.04761",
+    "kind": "paper",
+    "claim": "Toolformer shows language models can teach themselves to call external tools via APIs.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "arxiv": "2302.04761"
+  },
+  {
+    "url": "https://arxiv.org/abs/2302.12173",
+    "kind": "paper",
+    "claim": "Greshake et al. define indirect prompt injection: attacker instructions planted in retrieved data compromise LLM-integrated applications.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+    "title": "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+    "arxiv": "2302.12173"
+  },
+  {
+    "url": "https://arxiv.org/abs/2303.17651",
+    "kind": "paper",
+    "claim": "Self-Refine shows an LLM iteratively improving its own output using self-generated feedback (the evaluator-optimizer loop).",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Self-Refine: Iterative Refinement with Self-Feedback",
+    "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+    "arxiv": "2303.17651"
+  },
+  {
+    "url": "https://arxiv.org/abs/2306.05685",
+    "kind": "paper",
+    "claim": "Establishes LLM-as-a-judge evaluation with MT-Bench and Chatbot Arena, including judge biases and agreement with human preference.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+    "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+    "arxiv": "2306.05685"
+  },
+  {
+    "url": "https://arxiv.org/abs/2308.08155",
+    "kind": "paper",
+    "claim": "AutoGen frames multi-agent applications as conversations among cooperating LLM agents.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+    "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+    "arxiv": "2308.08155"
+  },
+  {
+    "url": "https://arxiv.org/abs/2310.08560",
+    "kind": "paper",
+    "claim": "MemGPT treats the context window like an OS memory hierarchy, paging information between context and external storage.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "MemGPT: Towards LLMs as Operating Systems",
+    "title": "MemGPT: Towards LLMs as Operating Systems",
+    "arxiv": "2310.08560"
+  },
+  {
+    "url": "https://arxiv.org/abs/2402.01030",
+    "kind": "paper",
+    "claim": "CodeAct shows agents that emit executable Python code as their action space outperform JSON tool-calling agents.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Executable Code Actions Elicit Better LLM Agents",
+    "title": "Executable Code Actions Elicit Better LLM Agents",
+    "arxiv": "2402.01030"
+  },
+  {
+    "url": "https://py.sdk.modelcontextprotocol.io/whats-new/",
+    "kind": "release",
+    "claim": "MCP Python SDK v2 renamed the high-level FastMCP server class to MCPServer (breaking change from 1.x).",
+    "fetched_at": "2026-08-15",
+    "excerpt": "FastMCP is now MCPServer The high-level server class was renamed, and its module with it",
+    "title": "What's new in v2 - MCP Python SDK"
+  },
+  {
+    "url": "https://a2a-protocol.org/v1.0.0/specification/",
+    "kind": "spec",
+    "claim": "The A2A v1.0.0 specification serves the Agent Card at the well-known URI path /.well-known/agent-card.json.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "https://{server_domain}/.well-known/agent-card.json",
+    "title": "Agent2Agent (A2A) Protocol Specification (v1.0.0)"
+  },
+  {
+    "url": "https://a2a-protocol.org/v1.0.0/specification/",
+    "kind": "spec",
+    "claim": "The A2A task lifecycle includes an input-required state an agent enters to request additional input mid-task.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Agents can request additional input mid-processing by transitioning a task to the input-required state",
+    "title": "Agent2Agent (A2A) Protocol Specification (v1.0.0)"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle",
+    "kind": "spec",
+    "claim": "In MCP revision 2025-11-25 (the newest revision with session initialization, the line mcp 1.x targets; 2026-07-28 made the initialize handshake legacy), the initialization phase MUST be the first interaction between client and server.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "The initialization phase MUST be the first interaction between client and server",
+    "title": "Lifecycle - Model Context Protocol (2025-11-25)"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28",
+    "kind": "spec",
+    "claim": "The latest dated MCP specification revision (2026-07-28, served by /specification/latest) defines servers exposing resources, prompts, and tools to clients.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "Resources: Context and data, for the user or the AI model to use Prompts: Templated messages and workflows for users Tools: Functions for the AI model to execute",
+    "title": "Specification - Model Context Protocol (2026-07-28)"
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+    "kind": "spec",
+    "claim": "MCP tool execution errors are reported inside the tool result with isError: true rather than as protocol-level errors.",
+    "fetched_at": "2026-08-15",
+    "excerpt": "They are reported in tool results with isError: true",
+    "title": "Tools - Model Context Protocol (2026-07-28)"
+  }
+]
