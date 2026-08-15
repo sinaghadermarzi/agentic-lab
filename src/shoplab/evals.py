@@ -27,6 +27,8 @@ def score_ticket(pred, gold) -> dict:
     a, b = pred.get("refund_usd"), gold["refund_usd"]
     if a is None or b is None:
         amount = a is None and b is None        # both absent is a match
+    elif not isinstance(a, (int, float)) or isinstance(a, bool):
+        amount = False                          # "170.99" is a schema violation, not a match
     else:
         amount = abs(a - b) <= 0.01             # a cent of float slack
     return {"decision_correct": decision, "policy_correct": policy,
