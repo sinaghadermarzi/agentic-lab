@@ -40,6 +40,7 @@ def strip_one(path: Path) -> bool:
         if cell.cell_type == "code":
             cell["outputs"] = []
             cell["execution_count"] = None
+        cell.get("metadata", {}).pop("execution", None)   # nbclient timestamps re-dirty diffs
     nb.metadata["kernelspec"] = dict(KERNELSPEC)
     nb.metadata["language_info"] = dict(LANGUAGE_INFO)
     after = nbformat.writes(nb)
