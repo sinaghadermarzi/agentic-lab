@@ -63,6 +63,7 @@ EXPECTED_CHAPTERS: list[str] = [
     "16-langgraph.ipynb",
     "17-smolagents.ipynb",
     "18-crewai.ipynb",
+    "19-capstone.ipynb",
 ]
 EXPECTED_APPENDICES: list[str] = []
 
