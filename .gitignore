@@ -1,0 +1,19 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv*/
+*.egg-info/
+
+# Course artifacts & caches (created at runtime)
+artifacts/
+.litellm_cache/
+.phoenix/
+
+# Secrets
+.env
+
+# macOS
+.DS_Store

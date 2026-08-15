@@ -1,0 +1,302 @@
+[
+  {
+    "sku": "LK-1001",
+    "name": "Ridgeline 2P Tent",
+    "category": "camp",
+    "price_usd": 289.0,
+    "weight_kg": 2.4,
+    "stock": 14,
+    "reorder_threshold": 5,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1002",
+    "name": "Cirrus Down Jacket",
+    "category": "apparel",
+    "price_usd": 219.0,
+    "weight_kg": 0.45,
+    "stock": 22,
+    "reorder_threshold": 6,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1003",
+    "name": "Trailhead 30L Pack",
+    "category": "accessories",
+    "price_usd": 129.99,
+    "weight_kg": 1.1,
+    "stock": 18,
+    "reorder_threshold": 6,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1004",
+    "name": "Basalt Trail Runners",
+    "category": "footwear",
+    "price_usd": 118.0,
+    "weight_kg": 0.62,
+    "stock": 25,
+    "reorder_threshold": 8,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1005",
+    "name": "Emberline Camp Stove",
+    "category": "camp",
+    "price_usd": 64.95,
+    "weight_kg": 0.38,
+    "stock": 30,
+    "reorder_threshold": 8,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1006",
+    "name": "Meridian Water Filter",
+    "category": "hydration",
+    "price_usd": 45.5,
+    "weight_kg": 0.18,
+    "stock": 9,
+    "reorder_threshold": 10,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1007",
+    "name": "Halo 400 Headlamp",
+    "category": "accessories",
+    "price_usd": 52.0,
+    "weight_kg": 0.09,
+    "stock": 33,
+    "reorder_threshold": 8,
+    "hazmat": true
+  },
+  {
+    "sku": "LK-1008",
+    "name": "Voltcore 20K Power Bank",
+    "category": "accessories",
+    "price_usd": 68.0,
+    "weight_kg": 0.35,
+    "stock": 27,
+    "reorder_threshold": 8,
+    "hazmat": true
+  },
+  {
+    "sku": "LK-1009",
+    "name": "Alpine Merino Socks",
+    "category": "footwear",
+    "price_usd": 22.0,
+    "weight_kg": 0.08,
+    "stock": 60,
+    "reorder_threshold": 12,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1010",
+    "name": "Glacier 1L Insulated Bottle",
+    "category": "hydration",
+    "price_usd": 38.0,
+    "weight_kg": 0.42,
+    "stock": 45,
+    "reorder_threshold": 10,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1011",
+    "name": "Nimbus Rain Shell",
+    "category": "apparel",
+    "price_usd": 159.0,
+    "weight_kg": 0.36,
+    "stock": 20,
+    "reorder_threshold": 6,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1012",
+    "name": "Sequoia 65L Expedition Pack",
+    "category": "accessories",
+    "price_usd": 279.0,
+    "weight_kg": 2.1,
+    "stock": 4,
+    "reorder_threshold": 5,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1013",
+    "name": "Drift 20F Sleeping Bag",
+    "category": "camp",
+    "price_usd": 199.0,
+    "weight_kg": 1.35,
+    "stock": 16,
+    "reorder_threshold": 5,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1014",
+    "name": "Loft Sleeping Pad",
+    "category": "camp",
+    "price_usd": 89.0,
+    "weight_kg": 0.58,
+    "stock": 24,
+    "reorder_threshold": 8,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1015",
+    "name": "Cedar Approach Shoes",
+    "category": "footwear",
+    "price_usd": 135.0,
+    "weight_kg": 0.7,
+    "stock": 19,
+    "reorder_threshold": 6,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1016",
+    "name": "Torrent Hiking Boots",
+    "category": "footwear",
+    "price_usd": 189.99,
+    "weight_kg": 1.05,
+    "stock": 5,
+    "reorder_threshold": 6,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1017",
+    "name": "Stratus Fleece Pullover",
+    "category": "apparel",
+    "price_usd": 79.0,
+    "weight_kg": 0.4,
+    "stock": 28,
+    "reorder_threshold": 8,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1018",
+    "name": "Timberline Camp Lantern",
+    "category": "camp",
+    "price_usd": 34.0,
+    "weight_kg": 0.3,
+    "stock": 38,
+    "reorder_threshold": 10,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1019",
+    "name": "Cascade Trekking Poles",
+    "category": "accessories",
+    "price_usd": 96.0,
+    "weight_kg": 0.48,
+    "stock": 21,
+    "reorder_threshold": 6,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1020",
+    "name": "Riverstone Multitool",
+    "category": "accessories",
+    "price_usd": 42.0,
+    "weight_kg": 0.22,
+    "stock": 35,
+    "reorder_threshold": 10,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1021",
+    "name": "Aster 3L Hydration Reservoir",
+    "category": "hydration",
+    "price_usd": 41.0,
+    "weight_kg": 0.2,
+    "stock": 44,
+    "reorder_threshold": 10,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1022",
+    "name": "Frostpeak Insulated Gloves",
+    "category": "apparel",
+    "price_usd": 48.0,
+    "weight_kg": 0.16,
+    "stock": 32,
+    "reorder_threshold": 8,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1023",
+    "name": "Lumen Base Layer Top",
+    "category": "apparel",
+    "price_usd": 58.0,
+    "weight_kg": 0.22,
+    "stock": 26,
+    "reorder_threshold": 8,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1024",
+    "name": "Pathfinder First-Aid Kit",
+    "category": "accessories",
+    "price_usd": 36.5,
+    "weight_kg": 0.55,
+    "stock": 30,
+    "reorder_threshold": 8,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1025",
+    "name": "Vertex 3P Basecamp Tent",
+    "category": "camp",
+    "price_usd": 379.0,
+    "weight_kg": 3.2,
+    "stock": 9,
+    "reorder_threshold": 4,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1026",
+    "name": "Tundra 0F Sleeping Bag",
+    "category": "camp",
+    "price_usd": 319.0,
+    "weight_kg": 1.8,
+    "stock": 11,
+    "reorder_threshold": 5,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1027",
+    "name": "Brook Collapsible Flask",
+    "category": "hydration",
+    "price_usd": 14.0,
+    "weight_kg": 0.06,
+    "stock": 70,
+    "reorder_threshold": 15,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1028",
+    "name": "Pebble Purification Tablets",
+    "category": "hydration",
+    "price_usd": 8.5,
+    "weight_kg": 0.03,
+    "stock": 90,
+    "reorder_threshold": 20,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1029",
+    "name": "Switchback Gaiters",
+    "category": "footwear",
+    "price_usd": 39.0,
+    "weight_kg": 0.14,
+    "stock": 33,
+    "reorder_threshold": 8,
+    "hazmat": false
+  },
+  {
+    "sku": "LK-1030",
+    "name": "Wander Camp Booties",
+    "category": "footwear",
+    "price_usd": 29.0,
+    "weight_kg": 0.24,
+    "stock": 42,
+    "reorder_threshold": 10,
+    "hazmat": false
+  }
+]

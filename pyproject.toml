@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentic-lab"
+version = "0.1.0"
+description = "A hands-on Jupyter course on agentic systems: build the machinery by hand, then meet the frameworks."
+requires-python = ">=3.12"
+dependencies = [
+  "litellm>=1.96,<2",
+  "diskcache>=5.6",
+  "python-dotenv>=1.0",
+  "jupyterlab>=4.2",
+  "pandas>=2.0",
+  "nbformat>=5.10",
+  "nbclient>=0.10",
+  "pytest>=8.0",
+  "httpx>=0.28",
+]
+
+[project.optional-dependencies]
+obs = ["arize-phoenix>=20", "openinference-instrumentation-litellm>=0.1.37"]
+mcp = ["mcp[cli]>=1.28,<2"]
+a2a = ["a2a-sdk[http-server]>=1.1,<2"]
+langgraph = ["langgraph>=1.2,<2", "langchain>=1,<2", "langchain-openai>=1,<2", "deepagents>=0.7"]
+smolagents = ["smolagents[litellm]>=1.26"]
+interop = ["agentic-lab[mcp,a2a]"]
+frameworks = ["agentic-lab[langgraph,smolagents]"]
+# Appendix extras that co-install with the main stack:
+pydantic-ai = ["pydantic-ai-slim[openai]>=2,<3"]
+adk = ["google-adk>=2.7,<3"]
+msaf = ["agent-framework-core>=1.14"]
+llamaindex = ["llama-index-workflows>=2,<3", "llama-index-llms-litellm"]
+agno = ["agno>=2.9,<3"]
+all = ["agentic-lab[obs,interop,frameworks,pydantic-ai,adk,msaf,llamaindex,agno]"]
+# Fresh-venv-only extras (resolver-proven conflicts with the main stack; see docs/CONVENTIONS.md):
+crewai = ["crewai>=1.15,<2", "ipykernel>=6"]
+strands = ["strands-agents[litellm]>=1.52,<2", "ipykernel>=6"]
+openai-agents = ["openai-agents[litellm]>=0.21", "ipykernel>=6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shoplab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

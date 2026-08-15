@@ -1,0 +1,688 @@
+{
+  "train": [
+    {
+      "ticket_id": "TKT-2201",
+      "order_id": "ORD-7317",
+      "customer_id": "CUST-10",
+      "sku": "LK-1024",
+      "qty": 1,
+      "reason_text": "My Pathfinder first-aid kit arrived with the case crushed and the plastic cracked down one side. The shipping box looked like it got run over somewhere in transit. It was delivered five days ago and I would like my money back.",
+      "requested_action": "refund",
+      "item_condition": "damaged",
+      "days_since_delivery": 5,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-damaged",
+        "refund_usd": 42.45
+      }
+    },
+    {
+      "ticket_id": "TKT-2202",
+      "order_id": "ORD-7321",
+      "customer_id": "CUST-01",
+      "sku": "LK-1002",
+      "qty": 1,
+      "reason_text": "I opened the box and used the Cirrus jacket around the house for an evening, but the fit is just not for me. Tags are off, otherwise it is like new. I would like a refund to my original payment method.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 12,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 219.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2203",
+      "order_id": "ORD-7319",
+      "customer_id": "CUST-11",
+      "sku": "LK-1001",
+      "qty": 1,
+      "reason_text": "Two of the Ridgeline tent poles arrived bent and there is a rip in the rainfly. The carton was punctured on one end, so it clearly happened in shipping. I attached a photo of the damage and the packaging; it was delivered here in Japan nine days ago.",
+      "requested_action": "refund",
+      "item_condition": "damaged",
+      "days_since_delivery": 9,
+      "evidence_photo": true,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-damaged",
+        "refund_usd": 313.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2204",
+      "order_id": "ORD-7314",
+      "customer_id": "CUST-08",
+      "sku": "LK-1022",
+      "qty": 1,
+      "reason_text": "I ordered the Frostpeak gloves in a medium and I clearly need the large. They are still sealed in the original bag. Could you swap them for the bigger size once I send these back?",
+      "requested_action": "replacement",
+      "item_condition": "unopened",
+      "days_since_delivery": 8,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "replacement",
+        "policy_id": "pol-exchanges",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2205",
+      "order_id": "ORD-7312",
+      "customer_id": "CUST-07",
+      "sku": "LK-1016",
+      "qty": 1,
+      "reason_text": "I opened the box and used the Torrent boots for one evening indoors, and they pinch at the toes something awful. Everything is repacked with the padding and tags. Please refund my original payment method.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 18,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "partial_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 170.99
+      }
+    },
+    {
+      "ticket_id": "TKT-2206",
+      "order_id": "ORD-7308",
+      "customer_id": "CUST-12",
+      "sku": "LK-1008",
+      "qty": 1,
+      "reason_text": "My Voltcore power bank stopped charging anything after two weeks, and yes, I attached a photo. I know my account probably got flagged since I have returned a few orders this year, so feel free to review my history. I just want this one sorted out.",
+      "requested_action": "refund",
+      "item_condition": "defective",
+      "days_since_delivery": 20,
+      "evidence_photo": true,
+      "gold": {
+        "decision": "escalate",
+        "policy_id": "pol-fraud",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2207",
+      "order_id": "ORD-7305",
+      "customer_id": "CUST-02",
+      "sku": "LK-1009",
+      "qty": 1,
+      "reason_text": "One of the two pairs of Alpine socks is thicker than I expected, and they are unworn, still in the wrapper. No card refund needed - store credit works for me. I will spend the credit at checkout soon enough.",
+      "requested_action": "store_credit",
+      "item_condition": "unopened",
+      "days_since_delivery": 15,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "store_credit",
+        "policy_id": "pol-store-credit",
+        "refund_usd": 22.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2208",
+      "order_id": "ORD-7306",
+      "customer_id": "CUST-03",
+      "sku": "LK-1013",
+      "qty": 1,
+      "reason_text": "I feel a bit bad about this one - I opened the Drift bag and used it for a single night in the yard before admitting it is too warm for me. It is aired out and repacked in its box. Could you refund my original payment method?",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 25,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 199.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2209",
+      "order_id": "ORD-7322",
+      "customer_id": "CUST-14",
+      "sku": "LK-1026",
+      "qty": 1,
+      "reason_text": "My Tundra sleeping bag arrived with a long scrape across the shell and the stuff sack torn open. I tossed the box before I noticed, so I have no photo or any real evidence to send you. It cost over $300, so I would really like this made right.",
+      "requested_action": "refund",
+      "item_condition": "damaged",
+      "days_since_delivery": 6,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "escalate",
+        "policy_id": "pol-fraud",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2210",
+      "order_id": "ORD-7303",
+      "customer_id": "CUST-04",
+      "sku": "LK-1005",
+      "qty": 1,
+      "reason_text": "Opened the box, fired up the Emberline stove once on the patio, decided gas canisters are not for me. Nothing wrong with it, I just used it that one time. Refund please.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 10,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "partial_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 58.46
+      }
+    },
+    {
+      "ticket_id": "TKT-2211",
+      "order_id": "ORD-7307",
+      "customer_id": "CUST-03",
+      "sku": "LK-1007",
+      "qty": 1,
+      "reason_text": "My Halo headlamp flickers and shuts off after about ten minutes no matter what I try - it has simply stopped working right. It is past a month since delivery, but this is a faulty unit, not wear. Can you send a replacement under warranty?",
+      "requested_action": "replacement",
+      "item_condition": "defective",
+      "days_since_delivery": 40,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "replacement",
+        "policy_id": "pol-defective",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2212",
+      "order_id": "ORD-7326",
+      "customer_id": "CUST-02",
+      "sku": "LK-1012",
+      "qty": 1,
+      "reason_text": "I bought the Sequoia pack for an Outback trip that fell through, and it has sat unopened in the original packaging ever since. I realize it has been a bit over a month since it was delivered here in Australia. I simply changed my mind and no longer need it - any chance of a refund?",
+      "requested_action": "refund",
+      "item_condition": "unopened",
+      "days_since_delivery": 32,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "deny",
+        "policy_id": "pol-returns",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2213",
+      "order_id": "ORD-7338",
+      "customer_id": "CUST-01",
+      "sku": "LK-1017",
+      "qty": 1,
+      "reason_text": "Honestly I just changed my mind about the Stratus pullover and then let it sit - it has now been more than 30 days since it was delivered. I wore it once and it is in perfect shape. Is a refund still possible this late?",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 33,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "deny",
+        "policy_id": "pol-returns",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2214",
+      "order_id": "ORD-7311",
+      "customer_id": "CUST-05",
+      "sku": "LK-1010",
+      "qty": 2,
+      "reason_text": "Both Glacier bottles arrived dented, and one leaked all over the carton when I first filled it. I do not have a photo because the packaging already went out with the recycling. Delivered a week ago; I want a refund for the pair.",
+      "requested_action": "refund",
+      "item_condition": "damaged",
+      "days_since_delivery": 7,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "deny",
+        "policy_id": "pol-damaged",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2215",
+      "order_id": "ORD-7332",
+      "customer_id": "CUST-15",
+      "sku": "LK-1030",
+      "qty": 1,
+      "reason_text": "Ordered the wrong thing entirely - I meant to get the camp booties in the adult sizing, not these. The package is still sealed, delivered three days ago. Just refund me, please.",
+      "requested_action": "refund",
+      "item_condition": "unopened",
+      "days_since_delivery": 3,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-returns",
+        "refund_usd": 29.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2216",
+      "order_id": "ORD-7316",
+      "customer_id": "CUST-03",
+      "sku": "LK-1019",
+      "qty": 1,
+      "reason_text": "The lower section of one Cascade trekking pole cracked at the locking collar on a normal day hike - a manufacturing fault, not abuse. I know it is well past a month since delivery, but surely the warranty covers this. Photo attached; I would prefer a refund over a replacement.",
+      "requested_action": "refund",
+      "item_condition": "defective",
+      "days_since_delivery": 48,
+      "evidence_photo": true,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-defective",
+        "refund_usd": 96.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2217",
+      "order_id": "ORD-7327",
+      "customer_id": "CUST-07",
+      "sku": "LK-1018",
+      "qty": 1,
+      "reason_text": "The Timberline lantern is fine, I just picked up a second one on sale elsewhere. I opened it to test it once. No need for money back on my card - store credit is fine, I will apply it at checkout on a future order.",
+      "requested_action": "store_credit",
+      "item_condition": "opened",
+      "days_since_delivery": 12,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "store_credit",
+        "policy_id": "pol-store-credit",
+        "refund_usd": 34.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2218",
+      "order_id": "ORD-7330",
+      "customer_id": "CUST-04",
+      "sku": "LK-1010",
+      "qty": 1,
+      "reason_text": "Bought the Glacier bottle, opened the box, used it for one gym session, and it is just heavier than I want to carry around. Nothing wrong with it at all. Refund whatever you can to my original payment method.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 7,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "partial_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 34.2
+      }
+    },
+    {
+      "ticket_id": "TKT-2219",
+      "order_id": "ORD-7315",
+      "customer_id": "CUST-09",
+      "sku": "LK-1027",
+      "qty": 2,
+      "reason_text": "I opened both Brook flasks and used each of them once on a run before deciding the soft-bottle thing is not for me. They are rinsed and back in the box. Send the refund to my original payment method when you can.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 9,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "partial_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 25.2
+      }
+    },
+    {
+      "ticket_id": "TKT-2220",
+      "order_id": "ORD-7302",
+      "customer_id": "CUST-01",
+      "sku": "LK-1011",
+      "qty": 1,
+      "reason_text": "The Nimbus shell I received is the blue colorway and I really wanted the moss color. The bag is still sealed. Can you swap it for the same shell in the other color once I mail this one back?",
+      "requested_action": "replacement",
+      "item_condition": "unopened",
+      "days_since_delivery": 14,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "replacement",
+        "policy_id": "pol-exchanges",
+        "refund_usd": null
+      }
+    }
+  ],
+  "dev": [
+    {
+      "ticket_id": "TKT-2221",
+      "order_id": "ORD-7309",
+      "customer_id": "CUST-06",
+      "sku": "LK-1015",
+      "qty": 1,
+      "reason_text": "The Cedar approach shoes run narrow, so back they go - I opened the box and walked one lap of the block in them. I am aware I have returned a lot of gear this season and my account is probably flagged for review by now. Just being upfront about it.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 10,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "escalate",
+        "policy_id": "pol-fraud",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2222",
+      "order_id": "ORD-7301",
+      "customer_id": "CUST-01",
+      "sku": "LK-1025",
+      "qty": 1,
+      "reason_text": "The Vertex tent arrived with a bent pole segment and a puncture right through the carton into the tent body. A photo of the damage and the packaging is attached. It was delivered eleven days ago; I would like a full refund including what I paid for shipping.",
+      "requested_action": "refund",
+      "item_condition": "damaged",
+      "days_since_delivery": 11,
+      "evidence_photo": true,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-damaged",
+        "refund_usd": 391.5
+      }
+    },
+    {
+      "ticket_id": "TKT-2223",
+      "order_id": "ORD-7304",
+      "customer_id": "CUST-02",
+      "sku": "LK-1026",
+      "qty": 1,
+      "reason_text": "There is a cold spot in my Tundra bag where the down has shifted out of a baffle - three weeks in and it is unusable below freezing. I cannot photograph it in any way that shows the problem, so I have no evidence beyond my description. I get that a claim north of $300 with nothing to show might need a closer review on your end.",
+      "requested_action": "refund",
+      "item_condition": "defective",
+      "days_since_delivery": 21,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "escalate",
+        "policy_id": "pol-fraud",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2224",
+      "order_id": "ORD-7339",
+      "customer_id": "CUST-15",
+      "sku": "LK-1024",
+      "qty": 1,
+      "reason_text": "Turns out my hiking group already carries a shared first-aid kit, so I no longer need my own. The Pathfinder kit is unopened in its original packaging. It arrived less than a week ago - refund, please.",
+      "requested_action": "refund",
+      "item_condition": "unopened",
+      "days_since_delivery": 6,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-returns",
+        "refund_usd": 36.5
+      }
+    },
+    {
+      "ticket_id": "TKT-2225",
+      "order_id": "ORD-7314",
+      "customer_id": "CUST-08",
+      "sku": "LK-1017",
+      "qty": 1,
+      "reason_text": "I opened the Stratus fleece and used it on two chilly mornings, but the cut is boxier than I like. It has been about three weeks since it arrived. A refund to my original payment method is fine.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 20,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "partial_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 71.1
+      }
+    },
+    {
+      "ticket_id": "TKT-2226",
+      "order_id": "ORD-7305",
+      "customer_id": "CUST-02",
+      "sku": "LK-1004",
+      "qty": 1,
+      "reason_text": "These Basalt runners have been sitting in the closet unopened since June - I changed my mind about them almost immediately but kept forgetting to write in. I know it has been nearly two months since they were delivered here in Canada. Anything you can do refund-wise?",
+      "requested_action": "refund",
+      "item_condition": "unopened",
+      "days_since_delivery": 55,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "deny",
+        "policy_id": "pol-returns",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2227",
+      "order_id": "ORD-7315",
+      "customer_id": "CUST-09",
+      "sku": "LK-1028",
+      "qty": 2,
+      "reason_text": "Two of the three Pebble tablet packs arrived crushed with the foil seals burst, and there is white powder all through the carton. Delivered the day before yesterday. I would like a refund for those two packs.",
+      "requested_action": "refund",
+      "item_condition": "damaged",
+      "days_since_delivery": 2,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-damaged",
+        "refund_usd": 17.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2228",
+      "order_id": "ORD-7313",
+      "customer_id": "CUST-01",
+      "sku": "LK-1003",
+      "qty": 1,
+      "reason_text": "I opened the Trailhead pack and used it on a single overnight, and the hip belt just does not sit right on me. Everything is clean and back in the box. Please put the refund on my original payment method.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 16,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 129.99
+      }
+    },
+    {
+      "ticket_id": "TKT-2229",
+      "order_id": "ORD-7323",
+      "customer_id": "CUST-13",
+      "sku": "LK-1030",
+      "qty": 1,
+      "reason_text": "Look, the Wander booties just do not fit right. I opened the bag and used them once around the house, that is it. Send my money back to my original payment method.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 8,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "partial_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 26.1
+      }
+    },
+    {
+      "ticket_id": "TKT-2230",
+      "order_id": "ORD-7338",
+      "customer_id": "CUST-01",
+      "sku": "LK-1017",
+      "qty": 1,
+      "reason_text": "Following up on my Stratus pullover - I know I changed my mind too late and the 30 days from delivery are long gone, but could I take store credit toward a new order instead of a refund? The pullover was worn once and is in great shape.",
+      "requested_action": "store_credit",
+      "item_condition": "opened",
+      "days_since_delivery": 34,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "deny",
+        "policy_id": "pol-returns",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2231",
+      "order_id": "ORD-7304",
+      "customer_id": "CUST-02",
+      "sku": "LK-1026",
+      "qty": 1,
+      "reason_text": "Update on my Tundra bag: with a borrowed camera you can clearly see the gap in the baffle stitching where the down escapes, so the photo is attached this time. Rather than money back, just send me a working replacement under warranty. It was delivered a month ago.",
+      "requested_action": "replacement",
+      "item_condition": "defective",
+      "days_since_delivery": 30,
+      "evidence_photo": true,
+      "gold": {
+        "decision": "replacement",
+        "policy_id": "pol-defective",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2232",
+      "order_id": "ORD-7302",
+      "customer_id": "CUST-01",
+      "sku": "LK-1011",
+      "qty": 1,
+      "reason_text": "Scratch my earlier swap request for the Nimbus shell - I found the moss color locally. The blue one is still sealed. Just issue me store credit and I will apply it at checkout sometime; no card refund needed.",
+      "requested_action": "store_credit",
+      "item_condition": "unopened",
+      "days_since_delivery": 20,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "store_credit",
+        "policy_id": "pol-store-credit",
+        "refund_usd": 159.0
+      }
+    }
+  ],
+  "test": [
+    {
+      "ticket_id": "TKT-2233",
+      "order_id": "ORD-7314",
+      "customer_id": "CUST-08",
+      "sku": "LK-1022",
+      "qty": 1,
+      "reason_text": "About the Frostpeak gloves I meant to exchange - the size I need never came back in stock, and meanwhile I opened them and used them on one cold walk. Let us just call it a return. Refund my original payment method, please.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 25,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "partial_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 43.2
+      }
+    },
+    {
+      "ticket_id": "TKT-2234",
+      "order_id": "ORD-7324",
+      "customer_id": "CUST-12",
+      "sku": "LK-1023",
+      "qty": 1,
+      "reason_text": "Plain and simple: the Lumen top is still sealed, it was delivered four days ago, and I would like a refund. Yes, this is the same account that has sent back a bunch of orders this year - I assume it is flagged for review by now. I will wait.",
+      "requested_action": "refund",
+      "item_condition": "unopened",
+      "days_since_delivery": 4,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "escalate",
+        "policy_id": "pol-fraud",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2235",
+      "order_id": "ORD-7311",
+      "customer_id": "CUST-05",
+      "sku": "LK-1010",
+      "qty": 2,
+      "reason_text": "Found the shipping carton in the garage after all, so here is the photo of the dented Glacier bottles with the packaging, as you asked. Both were damaged when they arrived two weeks back. Hoping this sorts out the refund for the pair plus the delivery charge.",
+      "requested_action": "refund",
+      "item_condition": "damaged",
+      "days_since_delivery": 13,
+      "evidence_photo": true,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-damaged",
+        "refund_usd": 81.95
+      }
+    },
+    {
+      "ticket_id": "TKT-2236",
+      "order_id": "ORD-7307",
+      "customer_id": "CUST-03",
+      "sku": "LK-1007",
+      "qty": 1,
+      "reason_text": "The replacement Halo headlamp has developed the exact same flicker and cutout as the first one - the thing is simply faulty, full stop. I am done troubleshooting; it stopped working properly within weeks. Refund the lamp this time, please.",
+      "requested_action": "refund",
+      "item_condition": "defective",
+      "days_since_delivery": 58,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "approve_refund",
+        "policy_id": "pol-defective",
+        "refund_usd": 52.0
+      }
+    },
+    {
+      "ticket_id": "TKT-2237",
+      "order_id": "ORD-7322",
+      "customer_id": "CUST-14",
+      "sku": "LK-1026",
+      "qty": 1,
+      "reason_text": "Turns out the scrape on my Tundra bag was just on the liner sack, so please drop the damage claim. I opened the box and used the bag for one night, and honestly it is too warm for me, so I would rather return it anyway. Refund my original payment method.",
+      "requested_action": "refund",
+      "item_condition": "opened",
+      "days_since_delivery": 15,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "partial_refund",
+        "policy_id": "pol-restocking",
+        "refund_usd": 287.1
+      }
+    },
+    {
+      "ticket_id": "TKT-2238",
+      "order_id": "ORD-7326",
+      "customer_id": "CUST-02",
+      "sku": "LK-1012",
+      "qty": 1,
+      "reason_text": "Since a refund on the Sequoia pack was off the table after the 30 days, how about store credit instead? It is still unopened in the shrink wrap. I changed my mind about the whole trip, as I said before.",
+      "requested_action": "store_credit",
+      "item_condition": "unopened",
+      "days_since_delivery": 35,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "deny",
+        "policy_id": "pol-returns",
+        "refund_usd": null
+      }
+    },
+    {
+      "ticket_id": "TKT-2239",
+      "order_id": "ORD-7315",
+      "customer_id": "CUST-09",
+      "sku": "LK-1028",
+      "qty": 1,
+      "reason_text": "The third Pebble pack survived the trip fine and is still sealed, but honestly I have gone off the idea of tablets. Store credit is fine for this one - I will apply it at checkout with my autumn order. No rush.",
+      "requested_action": "store_credit",
+      "item_condition": "unopened",
+      "days_since_delivery": 10,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "store_credit",
+        "policy_id": "pol-store-credit",
+        "refund_usd": 8.5
+      }
+    },
+    {
+      "ticket_id": "TKT-2240",
+      "order_id": "ORD-7305",
+      "customer_id": "CUST-02",
+      "sku": "LK-1009",
+      "qty": 1,
+      "reason_text": "For the second pair of Alpine socks: could you just swap them for the same socks in the large size? They are unworn, still in the wrapper. I will mail them back whenever you say the word.",
+      "requested_action": "replacement",
+      "item_condition": "unopened",
+      "days_since_delivery": 16,
+      "evidence_photo": false,
+      "gold": {
+        "decision": "replacement",
+        "policy_id": "pol-exchanges",
+        "refund_usd": null
+      }
+    }
+  ]
+}
