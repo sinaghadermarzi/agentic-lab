@@ -1,0 +1,730 @@
+[
+  {
+    "order_id": "ORD-7301",
+    "customer_id": "CUST-01",
+    "items": [
+      {
+        "sku": "LK-1025",
+        "qty": 1,
+        "unit_price_usd": 379.0
+      }
+    ],
+    "shipping_usd": 12.5,
+    "total_usd": 391.5,
+    "status": "delivered",
+    "placed_at": "2026-06-03",
+    "delivered_at": "2026-06-08",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7302",
+    "customer_id": "CUST-01",
+    "items": [
+      {
+        "sku": "LK-1011",
+        "qty": 1,
+        "unit_price_usd": 159.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 164.95,
+    "status": "delivered",
+    "placed_at": "2026-06-10",
+    "delivered_at": "2026-06-14",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7303",
+    "customer_id": "CUST-04",
+    "items": [
+      {
+        "sku": "LK-1005",
+        "qty": 1,
+        "unit_price_usd": 64.95
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 70.9,
+    "status": "delivered",
+    "placed_at": "2026-06-05",
+    "delivered_at": "2026-06-11",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7304",
+    "customer_id": "CUST-02",
+    "items": [
+      {
+        "sku": "LK-1026",
+        "qty": 1,
+        "unit_price_usd": 319.0
+      }
+    ],
+    "shipping_usd": 12.5,
+    "total_usd": 331.5,
+    "status": "delivered",
+    "placed_at": "2026-06-07",
+    "delivered_at": "2026-06-12",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7305",
+    "customer_id": "CUST-02",
+    "items": [
+      {
+        "sku": "LK-1004",
+        "qty": 1,
+        "unit_price_usd": 118.0
+      },
+      {
+        "sku": "LK-1009",
+        "qty": 2,
+        "unit_price_usd": 22.0
+      }
+    ],
+    "shipping_usd": 24.0,
+    "total_usd": 186.0,
+    "status": "delivered",
+    "placed_at": "2026-06-09",
+    "delivered_at": "2026-06-20",
+    "carrier": "Bluebird Express",
+    "destination_country": "CA"
+  },
+  {
+    "order_id": "ORD-7306",
+    "customer_id": "CUST-03",
+    "items": [
+      {
+        "sku": "LK-1013",
+        "qty": 1,
+        "unit_price_usd": 199.0
+      }
+    ],
+    "shipping_usd": 12.5,
+    "total_usd": 211.5,
+    "status": "delivered",
+    "placed_at": "2026-06-11",
+    "delivered_at": "2026-06-16",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7307",
+    "customer_id": "CUST-03",
+    "items": [
+      {
+        "sku": "LK-1007",
+        "qty": 1,
+        "unit_price_usd": 52.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 57.95,
+    "status": "delivered",
+    "placed_at": "2026-06-12",
+    "delivered_at": "2026-06-17",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7308",
+    "customer_id": "CUST-12",
+    "items": [
+      {
+        "sku": "LK-1008",
+        "qty": 1,
+        "unit_price_usd": 68.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 73.95,
+    "status": "delivered",
+    "placed_at": "2026-06-13",
+    "delivered_at": "2026-06-18",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7309",
+    "customer_id": "CUST-06",
+    "items": [
+      {
+        "sku": "LK-1015",
+        "qty": 1,
+        "unit_price_usd": 135.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 140.95,
+    "status": "delivered",
+    "placed_at": "2026-06-14",
+    "delivered_at": "2026-06-19",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7310",
+    "customer_id": "CUST-06",
+    "items": [
+      {
+        "sku": "LK-1025",
+        "qty": 1,
+        "unit_price_usd": 379.0
+      }
+    ],
+    "shipping_usd": 12.5,
+    "total_usd": 391.5,
+    "status": "delivered",
+    "placed_at": "2026-06-15",
+    "delivered_at": "2026-06-21",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7311",
+    "customer_id": "CUST-05",
+    "items": [
+      {
+        "sku": "LK-1010",
+        "qty": 2,
+        "unit_price_usd": 38.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 81.95,
+    "status": "delivered",
+    "placed_at": "2026-06-16",
+    "delivered_at": "2026-06-22",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7312",
+    "customer_id": "CUST-07",
+    "items": [
+      {
+        "sku": "LK-1016",
+        "qty": 1,
+        "unit_price_usd": 189.99
+      }
+    ],
+    "shipping_usd": 24.0,
+    "total_usd": 213.99,
+    "status": "delivered",
+    "placed_at": "2026-06-17",
+    "delivered_at": "2026-06-27",
+    "carrier": "Cascadia Post",
+    "destination_country": "DE"
+  },
+  {
+    "order_id": "ORD-7313",
+    "customer_id": "CUST-01",
+    "items": [
+      {
+        "sku": "LK-1003",
+        "qty": 1,
+        "unit_price_usd": 129.99
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 135.94,
+    "status": "delivered",
+    "placed_at": "2026-06-18",
+    "delivered_at": "2026-06-23",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7314",
+    "customer_id": "CUST-08",
+    "items": [
+      {
+        "sku": "LK-1017",
+        "qty": 1,
+        "unit_price_usd": 79.0
+      },
+      {
+        "sku": "LK-1022",
+        "qty": 1,
+        "unit_price_usd": 48.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 132.95,
+    "status": "delivered",
+    "placed_at": "2026-06-19",
+    "delivered_at": "2026-06-24",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7315",
+    "customer_id": "CUST-09",
+    "items": [
+      {
+        "sku": "LK-1027",
+        "qty": 2,
+        "unit_price_usd": 14.0
+      },
+      {
+        "sku": "LK-1028",
+        "qty": 3,
+        "unit_price_usd": 8.5
+      }
+    ],
+    "shipping_usd": 0.0,
+    "total_usd": 53.5,
+    "status": "delivered",
+    "placed_at": "2026-06-20",
+    "delivered_at": "2026-06-25",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7316",
+    "customer_id": "CUST-03",
+    "items": [
+      {
+        "sku": "LK-1019",
+        "qty": 1,
+        "unit_price_usd": 96.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 101.95,
+    "status": "delivered",
+    "placed_at": "2026-06-21",
+    "delivered_at": "2026-06-26",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7317",
+    "customer_id": "CUST-10",
+    "items": [
+      {
+        "sku": "LK-1024",
+        "qty": 1,
+        "unit_price_usd": 36.5
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 42.45,
+    "status": "delivered",
+    "placed_at": "2026-06-22",
+    "delivered_at": "2026-06-27",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7318",
+    "customer_id": "CUST-06",
+    "items": [
+      {
+        "sku": "LK-1014",
+        "qty": 1,
+        "unit_price_usd": 89.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 94.95,
+    "status": "delivered",
+    "placed_at": "2026-06-23",
+    "delivered_at": "2026-06-28",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7319",
+    "customer_id": "CUST-11",
+    "items": [
+      {
+        "sku": "LK-1001",
+        "qty": 1,
+        "unit_price_usd": 289.0
+      }
+    ],
+    "shipping_usd": 24.0,
+    "total_usd": 313.0,
+    "status": "delivered",
+    "placed_at": "2026-06-24",
+    "delivered_at": "2026-07-04",
+    "carrier": "Cascadia Post",
+    "destination_country": "JP"
+  },
+  {
+    "order_id": "ORD-7320",
+    "customer_id": "CUST-12",
+    "items": [
+      {
+        "sku": "LK-1020",
+        "qty": 1,
+        "unit_price_usd": 42.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 47.95,
+    "status": "delivered",
+    "placed_at": "2026-06-25",
+    "delivered_at": "2026-06-30",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7321",
+    "customer_id": "CUST-01",
+    "items": [
+      {
+        "sku": "LK-1002",
+        "qty": 1,
+        "unit_price_usd": 219.0
+      }
+    ],
+    "shipping_usd": 12.5,
+    "total_usd": 231.5,
+    "status": "delivered",
+    "placed_at": "2026-06-26",
+    "delivered_at": "2026-07-01",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7322",
+    "customer_id": "CUST-14",
+    "items": [
+      {
+        "sku": "LK-1026",
+        "qty": 1,
+        "unit_price_usd": 319.0
+      }
+    ],
+    "shipping_usd": 12.5,
+    "total_usd": 331.5,
+    "status": "delivered",
+    "placed_at": "2026-06-27",
+    "delivered_at": "2026-07-02",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7323",
+    "customer_id": "CUST-13",
+    "items": [
+      {
+        "sku": "LK-1030",
+        "qty": 1,
+        "unit_price_usd": 29.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 34.95,
+    "status": "delivered",
+    "placed_at": "2026-06-28",
+    "delivered_at": "2026-07-03",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7324",
+    "customer_id": "CUST-12",
+    "items": [
+      {
+        "sku": "LK-1023",
+        "qty": 1,
+        "unit_price_usd": 58.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 63.95,
+    "status": "delivered",
+    "placed_at": "2026-06-29",
+    "delivered_at": "2026-07-04",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7325",
+    "customer_id": "CUST-06",
+    "items": [
+      {
+        "sku": "LK-1021",
+        "qty": 1,
+        "unit_price_usd": 41.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 46.95,
+    "status": "returned",
+    "placed_at": "2026-06-30",
+    "delivered_at": "2026-07-05",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7326",
+    "customer_id": "CUST-02",
+    "items": [
+      {
+        "sku": "LK-1012",
+        "qty": 1,
+        "unit_price_usd": 279.0
+      }
+    ],
+    "shipping_usd": 24.0,
+    "total_usd": 303.0,
+    "status": "delivered",
+    "placed_at": "2026-07-01",
+    "delivered_at": "2026-07-11",
+    "carrier": "Bluebird Express",
+    "destination_country": "AU"
+  },
+  {
+    "order_id": "ORD-7327",
+    "customer_id": "CUST-07",
+    "items": [
+      {
+        "sku": "LK-1018",
+        "qty": 1,
+        "unit_price_usd": 34.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 39.95,
+    "status": "delivered",
+    "placed_at": "2026-07-02",
+    "delivered_at": "2026-07-07",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7328",
+    "customer_id": "CUST-05",
+    "items": [
+      {
+        "sku": "LK-1029",
+        "qty": 1,
+        "unit_price_usd": 39.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 44.95,
+    "status": "shipped",
+    "placed_at": "2026-07-20",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7329",
+    "customer_id": "CUST-12",
+    "items": [
+      {
+        "sku": "LK-1006",
+        "qty": 1,
+        "unit_price_usd": 45.5
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 51.45,
+    "status": "refunded",
+    "placed_at": "2026-07-03",
+    "delivered_at": "2026-07-08",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7330",
+    "customer_id": "CUST-04",
+    "items": [
+      {
+        "sku": "LK-1010",
+        "qty": 1,
+        "unit_price_usd": 38.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 43.95,
+    "status": "delivered",
+    "placed_at": "2026-07-04",
+    "delivered_at": "2026-07-09",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7331",
+    "customer_id": "CUST-08",
+    "items": [
+      {
+        "sku": "LK-1011",
+        "qty": 1,
+        "unit_price_usd": 159.0
+      }
+    ],
+    "shipping_usd": 12.5,
+    "total_usd": 171.5,
+    "status": "returned",
+    "placed_at": "2026-07-05",
+    "delivered_at": "2026-07-10",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7332",
+    "customer_id": "CUST-15",
+    "items": [
+      {
+        "sku": "LK-1030",
+        "qty": 1,
+        "unit_price_usd": 29.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 34.95,
+    "status": "delivered",
+    "placed_at": "2026-07-06",
+    "delivered_at": "2026-07-11",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7333",
+    "customer_id": "CUST-14",
+    "items": [
+      {
+        "sku": "LK-1004",
+        "qty": 1,
+        "unit_price_usd": 118.0
+      }
+    ],
+    "shipping_usd": 24.0,
+    "total_usd": 142.0,
+    "status": "shipped",
+    "placed_at": "2026-07-25",
+    "carrier": "Cascadia Post",
+    "destination_country": "CA"
+  },
+  {
+    "order_id": "ORD-7334",
+    "customer_id": "CUST-09",
+    "items": [
+      {
+        "sku": "LK-1005",
+        "qty": 1,
+        "unit_price_usd": 64.95
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 70.9,
+    "status": "placed",
+    "placed_at": "2026-08-05",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7335",
+    "customer_id": "CUST-13",
+    "items": [
+      {
+        "sku": "LK-1020",
+        "qty": 1,
+        "unit_price_usd": 42.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 47.95,
+    "status": "cancelled",
+    "placed_at": "2026-07-15",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7336",
+    "customer_id": "CUST-10",
+    "items": [
+      {
+        "sku": "LK-1009",
+        "qty": 3,
+        "unit_price_usd": 22.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 71.95,
+    "status": "shipped",
+    "placed_at": "2026-08-01",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7337",
+    "customer_id": "CUST-11",
+    "items": [
+      {
+        "sku": "LK-1027",
+        "qty": 1,
+        "unit_price_usd": 14.0
+      }
+    ],
+    "shipping_usd": 0.0,
+    "total_usd": 14.0,
+    "status": "placed",
+    "placed_at": "2026-08-10",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7338",
+    "customer_id": "CUST-01",
+    "items": [
+      {
+        "sku": "LK-1017",
+        "qty": 1,
+        "unit_price_usd": 79.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 84.95,
+    "status": "delivered",
+    "placed_at": "2026-07-07",
+    "delivered_at": "2026-07-12",
+    "carrier": "TruckIt",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7339",
+    "customer_id": "CUST-15",
+    "items": [
+      {
+        "sku": "LK-1024",
+        "qty": 1,
+        "unit_price_usd": 36.5
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 42.45,
+    "status": "delivered",
+    "placed_at": "2026-07-08",
+    "delivered_at": "2026-07-13",
+    "carrier": "Cascadia Post",
+    "destination_country": "US"
+  },
+  {
+    "order_id": "ORD-7340",
+    "customer_id": "CUST-03",
+    "items": [
+      {
+        "sku": "LK-1019",
+        "qty": 1,
+        "unit_price_usd": 96.0
+      }
+    ],
+    "shipping_usd": 5.95,
+    "total_usd": 101.95,
+    "status": "placed",
+    "placed_at": "2026-08-12",
+    "carrier": "Bluebird Express",
+    "destination_country": "US"
+  }
+]
