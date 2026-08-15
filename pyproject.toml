@@ -23,7 +23,7 @@ dependencies = [
 obs = ["arize-phoenix>=20", "openinference-instrumentation-litellm>=0.1.37"]
 mcp = ["mcp[cli]>=1.28,<2"]
 a2a = ["a2a-sdk[http-server]>=1.1,<2"]
-langgraph = ["langgraph>=1.2,<2", "langchain>=1,<2", "deepagents>=0.7"]
+langgraph = ["langgraph>=1.2,<2", "langchain>=1,<2", "langchain-openai>=1,<2", "deepagents>=0.7"]
 smolagents = ["smolagents[litellm]>=1.26"]
 interop = ["agentic-lab[mcp,a2a]"]
 frameworks = ["agentic-lab[langgraph,smolagents]"]

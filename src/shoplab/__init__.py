@@ -20,8 +20,12 @@ Submodules so far:
 - ``security`` -- chapter 09 prompt-injection lab: ``get_reviews``/``read_email``
   (attacker-controlled text, labels hidden), ``scoped_tools`` least-privilege
   toolsets, and ``attack_rate``/``run_injection_trial`` for measuring defenses
+- ``context`` -- managing the context window: ``count_tokens`` and the
+  ``ContextLedger`` growth curve, ``offload``/``load_offload`` blob handles,
+  ``compact`` to fold a long run's middle into one summary, and ``run_subagent``
+  as a context firewall
 
-# Later chapters add more submodules (context, ...).
+# Later chapters add more submodules (memory, ...).
 
 No submodule is imported here: ``import shoplab`` stays cheap and
 dependency-free, and each submodule is imported explicitly where needed.

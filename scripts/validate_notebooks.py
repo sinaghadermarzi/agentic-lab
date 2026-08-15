@@ -54,6 +54,9 @@ EXPECTED_CHAPTERS: list[str] = [
     "07-multi-agent.ipynb",
     "08-production-controls.ipynb",
     "09-security.ipynb",
+    "10-context-engineering.ipynb",
+    "11-deep-agents.ipynb",
+    "12-interrupt-resume-compact.ipynb",
 ]
 EXPECTED_APPENDICES: list[str] = []
 
