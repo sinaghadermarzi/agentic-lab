@@ -34,7 +34,13 @@ ROOTS = ("litellm", "mcp", "a2a", "langgraph", "langchain", "smolagents",
          # framework taught in its own isolated venv: not present in the main
          # venv, so its dotted names resolve to SKIP (extra not installed)
          # rather than being silently uncollected. See docs/CONVENTIONS.md.
-         "crewai")
+         "crewai",
+         # main-venv appendix frameworks (co-install with the main stack, so
+         # their dotted names resolve to OK). Distinctive roots only -- the
+         # openai-agents and strands appendices run in isolated venvs and would
+         # only SKIP here, so we rely on their live execution rather than adding
+         # generic roots ("agents"/"strands") that collide with local vars.
+         "pydantic_ai", "google", "agent_framework", "llama_index", "agno")
 ROOT_ALT = "|".join(ROOTS)
 DOTTED_RE = re.compile(rf"\b(?:{ROOT_ALT})(?:\.[A-Za-z_]\w*)+")
 FROM_IMPORT_RE = re.compile(
