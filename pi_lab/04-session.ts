@@ -29,10 +29,12 @@ async function isolatedLoader(systemPrompt: string): Promise<DefaultResourceLoad
 // >>> pi_lab.session
 const runtime = await ModelRuntime.create({ authPath: `${home}/auth.json`, modelsPath: null });
 runtime.registerProvider("larkspur", deskProvider);            // the bridge, as harness config
+const model = runtime.getModel("larkspur", "larkspur-desk");
+if (!model) throw new Error("larkspur-desk is not registered"); // never fall back to a real provider
 
 async function openSession(sessionManager: SessionManager) {
   const { session } = await createAgentSession({
-    cwd, agentDir: home, modelRuntime: runtime, model: runtime.getModel("larkspur", "larkspur-desk"),
+    cwd, agentDir: home, modelRuntime: runtime, model,
     thinkingLevel: "off", noTools: "builtin", customTools: await deskTools(), // desk tools only
     resourceLoader: await isolatedLoader(SYSTEM), sessionManager,
     settingsManager: SettingsManager.inMemory({ compaction: { enabled: false } }),

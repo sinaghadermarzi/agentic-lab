@@ -23,6 +23,7 @@ that also exposes ``start``/``stop`` for notebooks that keep one bridge alive
 across cells, and records every request it served in ``bridge.calls``.
 """
 
+import hashlib
 import json
 import threading
 import time
@@ -165,12 +166,17 @@ class DeskBridge:
     def chat(self, body: dict):
         """Answer one chat-completions request; returns (message_dict, response)."""
         tools = body.get("tools") or None          # pi sends tools=[] on tool-free history
-        r = shoplab.llm.complete(normalize_messages(body.get("messages") or []),
-                                 model=self.model, tools=tools, max_tokens=self.max_tokens)
+        messages = normalize_messages(body.get("messages") or [])
+        r = shoplab.llm.complete(messages, model=self.model, tools=tools,
+                                 max_tokens=self.max_tokens)
         choice = r.choices[0]
         msg = _message_dict(choice.message)
+        # pi keys tool results on the call id, so an id must be non-empty and
+        # unique across the run. Fallback ids derive from this request's
+        # messages: unique per turn, yet identical on a cached rerun.
+        digest = hashlib.sha1(json.dumps(messages, sort_keys=True).encode()).hexdigest()[:10]
         for i, tc in enumerate(msg.get("tool_calls") or []):
-            tc["id"] = tc.get("id") or f"call_{i}"   # pi keys replays on the id: never empty
+            tc["id"] = tc.get("id") or f"call_{digest}_{i}"
         self.calls.append({"door": "model", "t": time.time(),
                            "tool_calls": [tc["function"]["name"] for tc in msg.get("tool_calls") or []],
                            "cost_usd": shoplab.llm.LEDGER[-1]["cost_usd"] if shoplab.llm.LEDGER else 0})

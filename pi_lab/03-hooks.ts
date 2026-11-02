@@ -19,16 +19,18 @@ const hooks: Partial<AgentLoopConfig> = {
     emit({ type: "hook", hook: "beforeToolCall", tool: toolCall.name, detail: "blocked" });
     return { block: true, reason: `${toolCall.name} needs human approval; record your decision with finish` };
   },
-  // ch09 quarantine: every tool result is marked as data, never instructions
+  // ch09 quarantine: every executed tool's result is marked as data, never
+  // instructions (a blocked call never runs, so it never reaches this hook)
   afterToolCall: async ({ toolCall, result }) => {
     const text = result.content.map((c) => (c.type === "text" ? c.text : "")).join("");
     emit({ type: "hook", hook: "afterToolCall", tool: toolCall.name, detail: "quarantined" });
     return { content: [{ type: "text", text: `[DATA]\n${text}\n[/DATA]` }] };
   },
-  // ch08 Budget: a ceiling enforced in code, checked once per turn
-  finishTurn: async () => {
+  // ch02's finish stop and ch08's Budget, decided once per completed turn
+  finishTurn: async ({ toolResults }) => {
     turns += 1;
-    if (turns < maxTurns) return undefined;
+    if (toolResults.some((r) => r.toolName === "finish" && !r.isError)) return { action: "end" };
+    if (turns < maxTurns || toolResults.length === 0) return undefined; // nothing to cut short
     emit({ type: "hook", hook: "finishTurn", detail: `budget of ${maxTurns} turns spent` });
     return { action: "end" };
   },
