@@ -9,6 +9,10 @@ npm ci --prefix pi_lab           # once; needs Node.js >= 22.19. Nothing global,
 npm run typecheck --prefix pi_lab  # optional: tsc over every file here
 ```
 
+`tests/test_pi_e2e.py` runs every file here for real (Node subprocesses, the pi CLI in JSON and RPC
+mode) against a scripted model behind the bridge — no network, no key — whenever this folder is
+installed; `pytest` skips it otherwise.
+
 | File | Layer | What it shows |
 |---|---|---|
 | `desk.ts` | shared | the desk model as data, its provider config, and the desk tools fetched from the bridge's tool door |

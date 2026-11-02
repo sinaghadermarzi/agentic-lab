@@ -203,13 +203,14 @@ agentic-lab/
 ## How this was built / quality
 
 Every chapter except the newest was executed live at `temperature=0` and its costs measured on a
-real run, not estimated; chapter 19 (pi) was verified offline — its bridge, event parsing, and RPC
-dialog loop are unit-tested, and its TypeScript was reviewed against the pinned pi 1.4.0 type
-declarations (`npm run typecheck --prefix pi_lab` checks it mechanically) — and awaits its first
-measured live run. The hand-built machinery is drift-checked
+real run, not estimated; chapter 19 (pi) was verified offline — its TypeScript type-checks against
+the pinned pi 1.4.0 packages (`npm run typecheck --prefix pi_lab`), and every layer it teaches (the
+pi-ai stream, the agent loop and its hooks, the SDK session, and the pi CLI in JSON and RPC mode)
+runs end to end against a scripted model behind the bridge (`tests/test_pi_e2e.py`, skipped when
+Node is absent) — and awaits its first measured live run. The hand-built machinery is drift-checked
 byte-for-byte: each canonical function is marked with paired sentinels in both its home notebook and
 `src/shoplab/`, every TypeScript block chapter 19 shows is checked against the `pi_lab/` file that
-runs, and the validator fails on any divergence. **219 tests** guard the package and the data
+runs, and the validator fails on any divergence. **226 tests** guard the package and the data
 invariants (every gold ticket recomputed from the rules engine). Every claim about a framework, protocol, or tool cites a primary source
 fetched at authoring time and registered in [`docs/citations.json`](docs/citations.json) — no URL is
 written from memory. The framework comparisons are engineering facts from our own resolver runs, not
