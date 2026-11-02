@@ -366,5 +366,103 @@
     "fetched_at": "2026-08-15",
     "excerpt": "They are reported in tool results with isError: true",
     "title": "Tools - Model Context Protocol (2026-07-28)"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/README.md",
+    "kind": "docs",
+    "claim": "pi (earendil-works/pi, v1.4.0) describes itself as a minimal, extensible agent harness and deliberately ships without sub-agents or plan mode, leaving them to extensions and packages.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "Pi is a minimal, extensible agent harness that you can make your own",
+    "title": "Pi README (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/README.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/ai/README.md",
+    "kind": "docs",
+    "claim": "pi-ai separates providers (which own auth and models) from API implementations (the shared wire protocols such as openai-completions); a Models collection routes each request to the provider that owns the model.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "Providers internally share **API implementations** (the wire protocols)",
+    "title": "pi-ai README (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/ai/README.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/agent/README.md",
+    "kind": "docs",
+    "claim": "pi-agent-core's beforeToolCall hook runs after argument validation and can block a call; finishTurn replaced the removed shouldStopAfterTurn hook; steer/followUp queue messages into a running agent.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "The `beforeToolCall` hook runs after `tool_execution_start` and validated argument parsing",
+    "title": "pi-agent-core README (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/agent/README.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/coding-agent/docs/how-pi-works.md",
+    "kind": "docs",
+    "claim": "pi sessions are trees of JSONL entries; compaction inserts a summary entry that replaces older messages in later requests while the original entries remain in the session tree.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "Compaction inserts a summary entry that replaces older messages in subsequent model requests",
+    "title": "How Pi Works (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/coding-agent/docs/how-pi-works.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/coding-agent/docs/extensions.md",
+    "kind": "docs",
+    "claim": "pi extensions are TypeScript modules exporting a factory that receives ExtensionAPI; they run inside the pi process with its operating-system permissions.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "Extensions are TypeScript modules that add executable behavior to Pi",
+    "title": "Extensions (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/coding-agent/docs/extensions.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/coding-agent/docs/rpc-extension-ui.md",
+    "kind": "docs",
+    "claim": "In RPC mode, extension dialog methods such as confirm emit an extension_ui_request on stdout and block until the client answers with a matching extension_ui_response on stdin.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "block until the client sends back an `extension_ui_response` on stdin with the matching `id`",
+    "title": "RPC Extension UI (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/coding-agent/docs/rpc-extension-ui.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/coding-agent/docs/session-format.md",
+    "kind": "spec",
+    "claim": "pi session files are JSONL whose entries form a tree through id/parentId fields, enabling in-place branching.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "Session entries form a tree structure via `id`/`parentId` fields",
+    "title": "Session File Format (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/coding-agent/docs/session-format.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/coding-agent/docs/cli.md",
+    "kind": "docs",
+    "claim": "The pi CLI's default tools are read, bash, edit and write; --no-builtin-tools disables them while keeping extension and custom tools.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "Disables default built-in tools while retaining extension and custom tools",
+    "title": "Command Line (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/coding-agent/docs/cli.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/coding-agent/docs/security.md",
+    "kind": "docs",
+    "claim": "Project trust does not limit what pi's tool calls can access: enabled tools use the operating-system permissions of the pi process.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "enabled tools still use the operating-system permissions of the Pi process",
+    "title": "Security (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/coding-agent/docs/security.md"
+  },
+  {
+    "url": "https://github.com/earendil-works/pi/blob/v1.4.0/packages/ai/src/api/openai-completions.ts",
+    "kind": "docs",
+    "claim": "pi-ai's openai-completions client always streams and treats a stream that ends without a finish_reason as an error.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "throw new Error(\"Stream ended without finish_reason\");",
+    "title": "openai-completions.ts (v1.4.0)",
+    "fetched_via": "https://raw.githubusercontent.com/earendil-works/pi/v1.4.0/packages/ai/src/api/openai-completions.ts"
+  },
+  {
+    "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent",
+    "kind": "release",
+    "claim": "The pi packages moved npm scope in 2026: @mariozechner/pi-coding-agent is deprecated in favour of @earendil-works/pi-coding-agent.",
+    "fetched_at": "2026-11-02",
+    "excerpt": "please use @earendil-works/pi-coding-agent instead going forward",
+    "title": "npm registry: @mariozechner/pi-coding-agent"
   }
 ]
