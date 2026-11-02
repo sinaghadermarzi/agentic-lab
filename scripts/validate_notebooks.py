@@ -19,6 +19,10 @@ Enforces the machine-checkable parts of docs/CONVENTIONS.md:
   paired "# >>> shoplab.X" / "# <<< shoplab.X" regions present in BOTH places
   must be byte-identical (trailing whitespace stripped per line). A region that
   exists on only one side is reported as INFO, not a failure.
+- TypeScript drift (chapter 19): paired "// >>> pi_lab.X" / "// <<< pi_lab.X"
+  regions in a notebook's markdown fences must exist in exactly one
+  pi_lab/**/*.ts file and be byte-identical to it (strict: a TS region shown in
+  a notebook but missing from pi_lab/ is a failure).
 - Citations: every http(s) URL outside the allowlist and every arXiv id cited
   in markdown must be registered in docs/citations.json.
 
@@ -63,7 +67,8 @@ EXPECTED_CHAPTERS: list[str] = [
     "16-langgraph.ipynb",
     "17-smolagents.ipynb",
     "18-crewai.ipynb",
-    "19-capstone.ipynb",
+    "19-pi.ipynb",
+    "20-capstone.ipynb",
 ]
 EXPECTED_APPENDICES: list[str] = [
     "A-agno.ipynb",
@@ -91,6 +96,13 @@ ARXIV_MD_RE = re.compile(r"arXiv:(\d{4}\.\d{4,5})")
 ARXIV_URL_RE = re.compile(r"arxiv\.org/abs/(\d{4}\.\d{4,5})")
 SENTINEL_OPEN_RE = re.compile(r"^\s*# >>> (shoplab\.[A-Za-z_][\w.]*)\s*$")
 SENTINEL_CLOSE_RE = re.compile(r"^\s*# <<< (shoplab\.[A-Za-z_][\w.]*)\s*$")
+# TypeScript regions (chapter 19): "// >>> pi_lab.X" in pi_lab/**/*.ts and in the
+# ```typescript fences of a chapter's markdown. Unlike the shoplab regions, a TS
+# region shown in a notebook MUST exist in pi_lab/ -- the fence is a window
+# onto the file that runs, never a free-standing transcript.
+TS_SENTINEL_OPEN_RE = re.compile(r"^\s*// >>> (pi_lab\.[A-Za-z_][\w.-]*)\s*$")
+TS_SENTINEL_CLOSE_RE = re.compile(r"^\s*// <<< (pi_lab\.[A-Za-z_][\w.-]*)\s*$")
+PI_LAB = ROOT / "pi_lab"
 NUMBERED_ITEM_RE = re.compile(r"^\s{0,3}\d+[.)]\s")
 
 PHOENIX_MD_HEADING = "### Phoenix observability (optional)"
@@ -98,12 +110,13 @@ CALLOUT_MARKERS = ("> **What you should see", "> **What to look for",
                    "> **Expected result")
 KERNEL_DISPLAY_NAME = "Python 3 (ipykernel)"
 
-LAST_CHAPTER = "19"            # the only chapter without a "Next up:" teaser
+LAST_CHAPTER = "20"            # the only chapter without a "Next up:" teaser
 CHAPTER_CELL_BUDGET = (18, 31)
 APPENDIX_CELL_BUDGET = (12, 20)
 
 failures: list[str] = []
 infos: list[str] = []
+ts_notebook_regions: dict[str, list[tuple[str, str]]] = {}   # filled by check_notebook
 
 
 def fail(msg: str) -> None:
@@ -187,18 +200,21 @@ def url_is_allowlisted(url: str) -> bool:
     return host == "github.com" and parsed.path.startswith(ALLOWED_GITHUB_PATH_PREFIX)
 
 
-def collect_sentinel_regions(text: str, where: str, dest: dict) -> None:
-    """Collect '# >>> shoplab.X' ... '# <<< shoplab.X' regions from text."""
+def collect_sentinel_regions(text: str, where: str, dest: dict,
+                             open_re=SENTINEL_OPEN_RE,
+                             close_re=SENTINEL_CLOSE_RE) -> None:
+    """Collect '# >>> shoplab.X' ... '# <<< shoplab.X' regions from text
+    (or, with the TS_* regexes, '// >>> pi_lab.X' ... '// <<< pi_lab.X')."""
     current, buf = None, []
     for line in text.splitlines():
-        m = SENTINEL_OPEN_RE.match(line)
+        m = open_re.match(line)
         if m:
             if current is not None:
                 fail(f"{where}: sentinel {current!r} still open when "
                      f"{m.group(1)!r} opens")
             current, buf = m.group(1), []
             continue
-        m = SENTINEL_CLOSE_RE.match(line)
+        m = close_re.match(line)
         if m:
             if current is None or m.group(1) != current:
                 fail(f"{where}: sentinel close {m.group(1)!r} does not match "
@@ -294,6 +310,12 @@ def check_notebook(path: Path, is_appendix: bool, config_cell: str | None,
                 break
         collect_sentinel_regions(src, f"{name}:code-cell-{i}",
                                  sentinel_notebook_regions)
+
+    for ci, cell in enumerate(nb.cells):          # TS windows live in markdown fences
+        if cell.cell_type == "markdown":
+            collect_sentinel_regions(cell.source, f"{name}:cell-{ci}",
+                                     ts_notebook_regions, TS_SENTINEL_OPEN_RE,
+                                     TS_SENTINEL_CLOSE_RE)
 
     for cell in nb.cells:
         if cell.cell_type != "code":
@@ -475,6 +497,37 @@ def main() -> None:
             wheres = [w for w, _ in nb_occurrences + pkg_occurrences]
             fail(f"sentinel region {region!r} drifted between "
                  f"{', '.join(wheres)} -- bodies must be byte-identical")
+
+    # -- TS sentinel drift: notebook markdown fences vs pi_lab/**/*.ts (strict) --
+    ts_file_regions: dict[str, list[tuple[str, str]]] = {}
+    if PI_LAB.is_dir():
+        for ts in sorted(PI_LAB.rglob("*.ts")):
+            if "node_modules" in ts.parts:
+                continue
+            rel = ts.relative_to(ROOT).as_posix()
+            collect_sentinel_regions(ts.read_text(encoding="utf-8"), rel,
+                                     ts_file_regions, TS_SENTINEL_OPEN_RE,
+                                     TS_SENTINEL_CLOSE_RE)
+    for region in sorted(set(ts_notebook_regions) | set(ts_file_regions)):
+        nb_occurrences = ts_notebook_regions.get(region, [])
+        file_occurrences = ts_file_regions.get(region, [])
+        if len(file_occurrences) > 1:
+            fail(f"TS region {region!r} is defined more than once in pi_lab/ "
+                 f"({', '.join(w for w, _ in file_occurrences)})")
+        if not file_occurrences:
+            fail(f"TS region {region!r} is shown in "
+                 f"{', '.join(w for w, _ in nb_occurrences)} but exists in no "
+                 f"pi_lab/*.ts file -- a fence must be a window onto real code")
+            continue
+        if not nb_occurrences:
+            info(f"TS region {region!r} in {file_occurrences[0][0]} is not "
+                 f"shown in any notebook")
+            continue
+        bodies = {body for _, body in nb_occurrences + file_occurrences}
+        if len(bodies) > 1:
+            wheres = [w for w, _ in nb_occurrences + file_occurrences]
+            fail(f"TS region {region!r} drifted between {', '.join(wheres)} "
+                 f"-- bodies must be byte-identical")
 
     # -- report --
     for line in infos:

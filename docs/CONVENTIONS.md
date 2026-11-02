@@ -95,7 +95,20 @@ def run_agent(...):
 The validator extracts each region from its home notebook and from `src/shoplab/*.py` and
 requires **byte identity**. Regions: `world.search_policy` (ch00), `llm.parse_json_loose`
 (ch01), `loop.run_agent` (ch02), `trace.Span` (ch03), `rules.decide` + `evals.score_ticket`
-(ch04), `controls.Budget` + `controls.Checkpoint.save` (ch08), `context.compact` (ch10).
+(ch04), `controls.Budget` + `controls.Checkpoint.save` (ch08), `context.compact` (ch10),
+`bridge.sse_chunks` + `pi.events_to_spans` (ch19).
+
+### TypeScript windows (chapter 19)
+
+Chapter 19 runs TypeScript that lives in `pi_lab/` (Node, outside the Python package). Its notebook
+shows that code in markdown ```` ```typescript ```` fences, and the same contract applies in the
+other direction: each fence carries a paired `// >>> pi_lab.<name>` / `// <<< pi_lab.<name>`
+region, and the validator requires that region to exist in exactly one `pi_lab/**/*.ts` file with a
+byte-identical body. Unlike the `shoplab` regions this check is strict: a TS region shown in a
+notebook but absent from `pi_lab/` is a failure, because a fence is a window onto code that runs,
+never a free-standing transcript. TS files are written for Node's built-in type stripping
+(`erasableSyntaxOnly`: no enums, namespaces, or parameter properties; `import type` for type-only
+imports), so the notebook runs them with plain `node`, no build step.
 
 ## Install boxes
 
@@ -105,7 +118,11 @@ an extra opens with a standardized markdown "Install box" right after the title 
 > **Before running this notebook:** `pip install -e ".[langgraph]"` (once). Everything else
 > stays the same.
 
-Extras: ch11/16 `.[langgraph]`, ch13/19 `.[mcp]`, ch14/19 `.[a2a]`, ch17 `.[smolagents]`.
+Extras: ch11/16 `.[langgraph]`, ch13/20 `.[mcp]`, ch14/20 `.[a2a]`, ch17 `.[smolagents]`.
+Chapter 19 needs Node instead of a pip extra; its box reads:
+
+> **Before running this notebook:** install Node.js **>= 22.19**, then `npm ci --prefix pi_lab`
+> (once). ...
 Appendices: `.[pydantic-ai]`, `.[adk]`, `.[msaf]`, `.[llamaindex]`, `.[agno]` in the main
 venv. Three frameworks have resolver-proven conflicts with the main stack and get a **fresh
 venv + registered kernel** (exact 3-command box in the notebook): `.[crewai]` (pins
