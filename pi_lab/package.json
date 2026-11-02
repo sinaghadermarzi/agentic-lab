@@ -1,0 +1,23 @@
+{
+  "name": "agentic-lab-pi-lab",
+  "private": true,
+  "description": "Chapter 19's TypeScript side: pi (pi-ai, pi-agent-core, pi-coding-agent) driving the Larkspur desk through the Python desk bridge.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "pi": "pi",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@earendil-works/pi-agent-core": "1.4.0",
+    "@earendil-works/pi-ai": "1.4.0",
+    "@earendil-works/pi-coding-agent": "1.4.0",
+    "typebox": "1.3.27"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "typescript": "7.0.2"
+  }
+}

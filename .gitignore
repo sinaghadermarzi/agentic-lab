@@ -7,6 +7,9 @@ __pycache__/
 .venv*/
 *.egg-info/
 
+# Node (chapter 19's pi_lab/)
+node_modules/
+
 # Course artifacts & caches (created at runtime)
 artifacts/
 .litellm_cache/

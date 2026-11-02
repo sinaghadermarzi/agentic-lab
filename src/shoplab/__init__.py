@@ -24,6 +24,12 @@ Submodules so far:
   ``ContextLedger`` growth curve, ``offload``/``load_offload`` blob handles,
   ``compact`` to fold a long run's middle into one summary, and ``run_subagent``
   as a context firewall
+- ``bridge`` -- chapter 19's ``DeskBridge``: the model door (an OpenAI-compatible
+  endpoint over ``llm.complete``, streamed by ``sse_chunks``) and the tool door
+  (``run_tool`` over HTTP), so a non-Python harness keeps the course's seams
+- ``pi`` -- chapter 19's Python half of pi: run ``pi_lab/`` TypeScript or the
+  pi CLI (JSON / RPC) in isolation, read its JSONL events, ``final_decision``
+  for scoring, and ``events_to_spans`` back into the chapter 03 tree
 
 # Later chapters add more submodules (memory, ...).
 
