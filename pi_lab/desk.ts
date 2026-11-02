@@ -88,7 +88,8 @@ export async function callDesk(name: string, args: unknown): Promise<string> {
 // >>> pi_lab.desk-tools
 // Each catalog entry becomes an AgentTool whose execute() posts to the tool
 // door. Chapter 02's {"error": ...} result keeps its text and gains a typed
-// flag, isError: true. A successful `finish` terminates the run.
+// flag, isError: true. A successful `finish` asks pi to stop (terminate);
+// pi stops only when every call in that turn's batch asks the same.
 export async function deskTools(): Promise<AgentTool<TSchema>[]> {
   return (await deskCatalog()).map((tool) => ({
     name: tool.name,

@@ -209,7 +209,7 @@ declarations (`npm run typecheck --prefix pi_lab` checks it mechanically) — an
 measured live run. The hand-built machinery is drift-checked
 byte-for-byte: each canonical function is marked with paired sentinels in both its home notebook and
 `src/shoplab/`, every TypeScript block chapter 19 shows is checked against the `pi_lab/` file that
-runs, and the validator fails on any divergence. **209 tests** guard the package and the data
+runs, and the validator fails on any divergence. **219 tests** guard the package and the data
 invariants (every gold ticket recomputed from the rules engine). Every claim about a framework, protocol, or tool cites a primary source
 fetched at authoring time and registered in [`docs/citations.json`](docs/citations.json) — no URL is
 written from memory. The framework comparisons are engineering facts from our own resolver runs, not

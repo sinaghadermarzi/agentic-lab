@@ -225,3 +225,24 @@ def test_bridge_start_stop_is_idempotent_and_frees_the_port(ledger):
     b.stop()
     with pytest.raises(httpx.HTTPError):
         httpx.get(url + "/tools", timeout=2)
+
+
+def test_fallback_tool_call_ids_are_unique_per_turn_and_stable_on_rerun(monkeypatch, bridge):
+    def id_less():
+        r = make_tool_call_msg("get_order", {"order_id": "ORD-7301"})
+        r.choices[0].message.tool_calls[0].id = ""
+        return r
+
+    def ask(messages):
+        r = httpx.post(bridge.url + "/v1/chat/completions",
+                       json={"stream": True, "messages": messages}, timeout=10)
+        return parse_sse(r.text)[1]["choices"][0]["delta"]["tool_calls"][0]["id"]
+
+    script(monkeypatch, [id_less(), id_less(), id_less()])
+    turn1 = [{"role": "user", "content": "triage"}]
+    turn2 = turn1 + [{"role": "assistant", "content": "", "tool_calls": [
+        {"id": "x", "type": "function", "function": {"name": "get_order", "arguments": "{}"}}]},
+        {"role": "tool", "tool_call_id": "x", "content": "{}"}]
+    first, second, again = ask(turn1), ask(turn2), ask(turn1)
+    assert first and first != second            # never empty, never reused across turns
+    assert again == first                       # same request -> same id (cache-friendly)
