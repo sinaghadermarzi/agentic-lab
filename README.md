@@ -4,8 +4,8 @@ A hands-on Jupyter course on agentic systems that builds the machinery by hand b
 single framework. You write the tool loop, the tracing layer, the eval harness, the budget and
 approval gates, the checkpointer, and the context-management tools yourself, in plain Python, each
 piece small enough to read in one sitting. Only then do the frameworks — LangGraph, smolagents,
-CrewAI, MCP, A2A, and a shelf of others — arrive as what they actually are: opinionated packagings
-of parts you already own. Every chapter makes live model calls, measures what they cost, and grades
+CrewAI, the pi harness, MCP, A2A, and a shelf of others — arrive as what they actually are:
+opinionated packagings of parts you already own. Every chapter makes live model calls, measures what they cost, and grades
 its output against fixed gold labels in one small persistent micro-world. Nothing here is a paper
 exercise, and nothing here is magic by the time you meet it.
 
@@ -21,15 +21,17 @@ The point of building the un-branded version first is that every framework featu
 
 | You build, by hand | Lives in | The framework name for it |
 |---|---|---|
-| `run_agent` tool loop (ReAct) | `shoplab.loop` (ch02) | OpenAI Agents SDK `Runner`, smolagents `CodeAgent`, the model-driven loop |
+| `run_agent` tool loop (ReAct) | `shoplab.loop` (ch02) | OpenAI Agents SDK `Runner`, smolagents `CodeAgent`, pi `agentLoop`, the model-driven loop |
+| `before_tool` veto / `on_step` hook | `shoplab.loop` (ch02) | pi `beforeToolCall` + its event stream; pi extension `tool_call` / `turn_end` events |
 | Router / supervisor over sub-agents | `shoplab.loop` (ch07) | CrewAI crew, LangGraph conditional edges, handoffs |
 | `Span` tracer | `shoplab.trace` (ch03) | Phoenix / OpenInference spans |
 | `Budget` ceiling on calls and dollars | `shoplab.controls` (ch08) | LangGraph `recursion_limit`; most frameworks leave it to you |
-| `require_approval` gate on risky tools | `shoplab.controls` (ch08) | LangGraph `interrupt`, OpenAI SDK `needs_approval`, Agno `requires_confirmation` |
-| `Checkpoint.save` / resume | `shoplab.controls` (ch08) | LangGraph checkpointer + store; PydanticAI `DeferredToolRequests` |
+| `require_approval` gate on risky tools | `shoplab.controls` (ch08) | LangGraph `interrupt`, OpenAI SDK `needs_approval`, Agno `requires_confirmation`, a pi `tool_call` handler returning `{ block: true }` |
+| `Checkpoint.save` / resume | `shoplab.controls` (ch08) | LangGraph checkpointer + store; PydanticAI `DeferredToolRequests`; pi's JSONL session tree |
 | `run_subagent` policy firewall | `shoplab.loop` (ch07, ch11) | LangGraph subgraph, CrewAI crew, `deepagents` |
-| `context.compact` | `shoplab.context` (ch10) | LangGraph `add_messages` reducer, framework memory managers |
-| Tool bridge over the wire | `mcp_servers/` (ch13) | MCP `FastMCP` server + client |
+| `context.compact` | `shoplab.context` (ch10) | LangGraph `add_messages` reducer, framework memory managers, pi compaction entries |
+| Tool bridge over the wire | `mcp_servers/` (ch13) | MCP `FastMCP` server + client; pi's JSON and RPC modes (JSONL over stdio) |
+| `DeskBridge` model door + tool door | `shoplab.bridge` (ch19) | an OpenAI-compatible endpoint; a pi-ai custom provider |
 
 ## The micro-world
 
@@ -41,7 +43,7 @@ is 40 gold-labeled tickets split train/dev/test, and the labels are computed by 
 than hand-assigned — see [`docs/WORLD.md`](docs/WORLD.md) for the full schema and the refund cascade.
 The agent works a fixed toolset — `get_order`, `get_customer`, `search_policy`, `check_inventory`,
 `calc`, and the two risky, gated writes `issue_refund` and `create_replacement` — the same set every
-chapter extends rather than replaces, which is what keeps twenty chapters comparable.
+chapter extends rather than replaces, which is what keeps twenty-one chapters comparable.
 
 ## Setup
 
@@ -104,7 +106,8 @@ deep agent that composes them all.
 | 13 | MCP: the wire format, then the SDK | The `initialize` handshake, `tools/list`, `tools/call`, then `FastMCP` | $0.02 |
 | 14 | A2A: agents as peers | Agent Cards, the task lifecycle, a supplier agent over HTTP | $0.01 |
 
-**Part 5 — The frameworks.** Hold your machinery up against the libraries the field reaches for.
+**Part 5 — The frameworks.** Hold your machinery up against the libraries the field reaches for, then
+against a minimal TypeScript harness built to be extended rather than configured.
 
 | # | Title | What you learn | Cost |
 |---|---|---|---|
@@ -112,15 +115,17 @@ deep agent that composes them all.
 | 16 | LangGraph: the graph archetype | Graph state, checkpointer, and `interrupt` vs. your own | $0.03 |
 | 17 | smolagents: code as action | CodeAct — the one execution model you did not build by hand | $0.02 |
 | 18 | CrewAI: the team archetype (and a lesson in dependency pins) | A crew of scoped roles; why it needs its own venv | $0.01 |
+| 19 | pi: a minimal harness, from the wire to extensions | pi's four layers (`pi-ai`, `pi-agent-core`, the harness, extensions) mapped onto your machinery; a pi extension for the desk | ~$0.02 (est.) |
 
 **Part 6 — Capstone.**
 
 | # | Title | What you learn | Cost |
 |---|---|---|---|
-| 19 | Capstone: the whole desk, end to end | The morning queue, wired through MCP + A2A + every control | $0.02 |
+| 20 | Capstone: the whole desk, end to end | The morning queue, wired through MCP + A2A + every control | $0.02 |
 
-**Whole course: under $0.30 on a first live run** — a full cold sweep of all 27 notebooks
-measured **~$0.12** of metered spend ([docs/costs.md](docs/costs.md)); cached reruns are free.
+**Whole course: under $0.30 on a first live run** — a full cold sweep of the 27 notebooks that
+existed on 2026-08-15 measured **~$0.12** of metered spend ([docs/costs.md](docs/costs.md)); chapter
+19, added later, is estimated at ~$0.02 and not yet in that sweep. Cached reruns are free.
 
 ### Appendices
 
@@ -147,9 +152,10 @@ standardized install box. Follow the sequence; no judgement calls.
 | Before | Run | Notes |
 |---|---|---|
 | ch11, ch16 | `pip install -e ".[langgraph]"` | main venv |
-| ch13, ch19 | `pip install -e ".[mcp]"` | main venv |
-| ch14, ch19 | `pip install -e ".[a2a]"` | main venv |
+| ch13, ch20 | `pip install -e ".[mcp]"` | main venv |
+| ch14, ch20 | `pip install -e ".[a2a]"` | main venv |
 | ch17 | `pip install -e ".[smolagents]"` | main venv |
+| ch19 | Node.js >= 22.19, then `npm ci --prefix pi_lab` | Node, not pip: the pinned pi 1.4.0 packages land in `pi_lab/node_modules`; nothing global, nothing in `~/.pi` |
 
 Three notebooks — **ch18 (CrewAI)**, **A-aws-strands**, **A-openai-agents-sdk** — have
 resolver-proven dependency conflicts with the main stack and must run in their own venv with a
@@ -180,12 +186,13 @@ Phoenix running.
 
 ```
 agentic-lab/
-├── 00-orientation-and-the-ops-desk.ipynb ... 19-capstone.ipynb   # the 20 numbered chapters
+├── 00-orientation-and-the-ops-desk.ipynb ... 20-capstone.ipynb   # the 21 numbered chapters
 ├── appendices/           # 7 framework appendices (A-*.ipynb) + 2 reference pages (R-*.md)
 ├── src/shoplab/          # the package you build across the course (loop, tools, controls, ...)
 ├── data/                 # the hand-authored micro-world: products, orders, tickets, policies (JSON)
 ├── mcp_servers/          # the shop's tools exposed over MCP (ch13)
 ├── a2a_servers/          # the supplier peer agent over A2A (ch14)
+├── pi_lab/               # ch19's TypeScript side: pinned pi 1.4.0 + the desk scripts and extension
 ├── scripts/              # validate_notebooks, check_data, execute_notebooks, strip_outputs
 ├── tests/                # pytest suite guarding shoplab + the data invariants
 ├── docs/                 # CONVENTIONS.md, WORLD.md, costs.md, citations.json
@@ -195,11 +202,16 @@ agentic-lab/
 
 ## How this was built / quality
 
-Every chapter was executed live at `temperature=0` and its costs measured on a real run, not
-estimated. The hand-built machinery is drift-checked byte-for-byte: each canonical function is marked
-with paired sentinels in both its home notebook and `src/shoplab/`, and the validator fails on any
-divergence. **185 tests** guard the package and the data invariants (every gold ticket recomputed
-from the rules engine). Every claim about a framework, protocol, or tool cites a primary source
+Every chapter except the newest was executed live at `temperature=0` and its costs measured on a
+real run, not estimated; chapter 19 (pi) was verified offline — its TypeScript type-checks against
+the pinned pi 1.4.0 packages (`npm run typecheck --prefix pi_lab`), and every layer it teaches (the
+pi-ai stream, the agent loop and its hooks, the SDK session, and the pi CLI in JSON and RPC mode)
+runs end to end against a scripted model behind the bridge (`tests/test_pi_e2e.py`, skipped when
+Node is absent) — and awaits its first measured live run. The hand-built machinery is drift-checked
+byte-for-byte: each canonical function is marked with paired sentinels in both its home notebook and
+`src/shoplab/`, every TypeScript block chapter 19 shows is checked against the `pi_lab/` file that
+runs, and the validator fails on any divergence. **226 tests** guard the package and the data
+invariants (every gold ticket recomputed from the rules engine). Every claim about a framework, protocol, or tool cites a primary source
 fetched at authoring time and registered in [`docs/citations.json`](docs/citations.json) — no URL is
 written from memory. The framework comparisons are engineering facts from our own resolver runs, not
 marketing copy: each library was installed against the base stack on one dated pass, and what

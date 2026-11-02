@@ -37,7 +37,8 @@ calls without touching the network.
 | `16-langgraph.ipynb` | 82s | $0.0010 |
 | `17-smolagents.ipynb` | 69s | $0.0074 |
 | `18-crewai.ipynb` | 32s | $0.00* |
-| `19-capstone.ipynb` | 180s | $0.0199 |
+| `19-pi.ipynb` | — | not yet measured (added after the sweep; estimated ~$0.02) |
+| `20-capstone.ipynb` | 180s | $0.0199 |
 
 ## Appendices
 
@@ -52,3 +53,8 @@ calls without touching the network.
 | `A-pydantic-ai.ipynb` | 26s | $0.00* |
 
 **Whole course, cold, one pass: ~$0.12.** Warm reruns: ~$0.
+
+Chapter 19 (pi) was added after this sweep, and the capstone was renumbered from 19 to 20 (its
+figure above is unchanged). Chapter 19's model calls go through the same LiteLLM disk cache (via
+`shoplab.bridge`), so its warm reruns are free too; its cold cost is an estimate until the next
+measured sweep.
