@@ -1,0 +1,50 @@
+name: Site
+
+# Builds the Jupyter Book (no notebook execution) and publishes it to GitHub Pages.
+# One-time setup in the repository settings: Pages -> Source -> "GitHub Actions".
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Jupyter Book
+        run: |
+          uv venv .venv --python 3.12
+          uv pip install -p .venv/bin/python "jupyter-book<2"
+
+      - name: Build
+        run: .venv/bin/jupyter-book build . --warningiserror=false
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

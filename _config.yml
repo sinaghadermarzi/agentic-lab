@@ -1,0 +1,43 @@
+# Jupyter Book configuration for the rendered course site.
+# Build locally:  pip install "jupyter-book<2" && jupyter-book build .
+# The site is built from the stripped notebooks without executing them; run the
+# chapters yourself (they need an OpenRouter key) to see live outputs.
+title: agentic-lab
+author: Sina Ghadermarzi
+copyright: "2026"
+logo: ""
+only_build_toc_files: true
+exclude_patterns:
+  - ".venv*"
+  - "_build"
+  - "pi_lab/node_modules"
+  - "**/.ipynb_checkpoints"
+  - ".litellm_cache"
+  - "artifacts"
+  - ".pytest_cache"
+
+execute:
+  execute_notebooks: "off"
+
+repository:
+  url: https://github.com/sinaghadermarzi/agentic-lab
+  branch: main
+
+html:
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: false
+  home_page_in_navbar: true
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+    - linkify
+    - substitution
+    - tasklist
+
+sphinx:
+  config:
+    html_show_copyright: false
+    suppress_warnings: ["myst.header", "myst.xref_missing"]
