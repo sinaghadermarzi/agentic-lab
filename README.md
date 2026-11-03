@@ -127,6 +127,12 @@ against a minimal TypeScript harness built to be extended rather than configured
 existed on 2026-08-15 measured **~$0.12** of metered spend ([docs/costs.md](docs/costs.md)); chapter
 19, added later, is estimated at ~$0.02 and not yet in that sweep. Cached reruns are free.
 
+### Simplified notebooks
+
+`simplified_notebooks/` holds a shorter, plainer-language version of each of the 21 numbered
+chapters (`00` to `20`, same file names). They run against the same shop and import the same
+`shoplab` package, so they need the same `.env` and the same per-chapter extras as the full chapters.
+
 ### Appendices
 
 Seven framework appendices each run the *same* fixed ticket (**TKT-2205**, gold `partial_refund /
@@ -156,6 +162,7 @@ standardized install box. Follow the sequence; no judgement calls.
 | ch14, ch20 | `pip install -e ".[a2a]"` | main venv |
 | ch17 | `pip install -e ".[smolagents]"` | main venv |
 | ch19 | Node.js >= 22.19, then `npm ci --prefix pi_lab` | Node, not pip: the pinned pi 1.4.0 packages land in `pi_lab/node_modules`; nothing global, nothing in `~/.pi` |
+| appendices | `pip install -e ".[pydantic-ai]"`, `[adk]`, `[msaf]`, `[llamaindex]`, `[agno]` | main venv; each appendix opens with its own install box (the three venv-only ones are listed below) |
 
 Three notebooks — **ch18 (CrewAI)**, **A-aws-strands**, **A-openai-agents-sdk** — have
 resolver-proven dependency conflicts with the main stack and must run in their own venv with a
@@ -187,13 +194,14 @@ Phoenix running.
 ```
 agentic-lab/
 ├── 00-orientation-and-the-ops-desk.ipynb ... 20-capstone.ipynb   # the 21 numbered chapters
+├── simplified_notebooks/ # a shorter, plainer version of each of the 21 chapters (same shop, same package)
 ├── appendices/           # 7 framework appendices (A-*.ipynb) + 2 reference pages (R-*.md)
 ├── src/shoplab/          # the package you build across the course (loop, tools, controls, ...)
 ├── data/                 # the hand-authored micro-world: products, orders, tickets, policies (JSON)
 ├── mcp_servers/          # the shop's tools exposed over MCP (ch13)
 ├── a2a_servers/          # the supplier peer agent over A2A (ch14)
 ├── pi_lab/               # ch19's TypeScript side: pinned pi 1.4.0 + the desk scripts and extension
-├── scripts/              # validate_notebooks, check_data, execute_notebooks, strip_outputs
+├── scripts/              # validate_notebooks, check_data, execute_notebooks, strip_outputs, preflight, api_audit
 ├── tests/                # pytest suite guarding shoplab + the data invariants
 ├── docs/                 # CONVENTIONS.md, WORLD.md, costs.md, citations.json
 ├── obs.py                # the Phoenix find-or-start helper
