@@ -33,7 +33,7 @@ jobs:
           uv pip install -p .venv/bin/python "jupyter-book<2"
 
       - name: Build
-        run: .venv/bin/jupyter-book build . --warningiserror=false
+        run: .venv/bin/jupyter-book build .
 
       - uses: actions/upload-pages-artifact@v3
         with:
