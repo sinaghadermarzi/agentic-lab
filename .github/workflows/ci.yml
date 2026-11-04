@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: pytest, notebook validator, data checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install (base stack plus the extras the tests import)
+        run: |
+          uv venv .venv --python 3.12
+          uv pip install -p .venv/bin/python -e ".[obs,mcp,a2a]"
+
+      - name: Static notebook validation (no execution, no network)
+        run: .venv/bin/python scripts/validate_notebooks.py
+
+      - name: Micro-world data invariants
+        run: .venv/bin/python scripts/check_data.py
+
+      - name: Unit tests
+        run: .venv/bin/python -m pytest tests -q
+
+  pi:
+    name: chapter 19 end to end (Node)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: pi_lab/package-lock.json
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install
+        run: |
+          npm ci --prefix pi_lab
+          uv venv .venv --python 3.12
+          uv pip install -p .venv/bin/python -e ".[obs]"
+
+      - name: pi tests (real Node subprocess, no network, no key)
+        run: .venv/bin/python -m pytest tests/test_pi.py tests/test_pi_e2e.py -q

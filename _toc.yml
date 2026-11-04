@@ -1,0 +1,54 @@
+# Table of contents for the Jupyter Book site (see _config.yml).
+format: jb-book
+root: README
+parts:
+  - caption: "Part 1. The machinery"
+    chapters:
+      - file: 00-orientation-and-the-ops-desk
+      - file: 01-the-model-boundary
+      - file: 02-the-tool-loop
+      - file: 03-tracing
+      - file: 04-evaluation
+  - caption: "Part 2. Patterns of control"
+    chapters:
+      - file: 05-workflows
+      - file: 06-verification
+      - file: 07-multi-agent
+  - caption: "Part 3. Production"
+    chapters:
+      - file: 08-production-controls
+      - file: 09-security
+      - file: 10-context-engineering
+      - file: 11-deep-agents
+      - file: 12-interrupt-resume-compact
+  - caption: "Part 4. Interoperability"
+    chapters:
+      - file: 13-mcp
+      - file: 14-a2a
+  - caption: "Part 5. The frameworks"
+    chapters:
+      - file: 15-framework-thinking
+      - file: 16-langgraph
+      - file: 17-smolagents
+      - file: 18-crewai
+      - file: 19-pi
+  - caption: "Part 6. Capstone"
+    chapters:
+      - file: 20-capstone
+  - caption: "Appendices"
+    chapters:
+      - file: appendices/A-pydantic-ai
+      - file: appendices/A-openai-agents-sdk
+      - file: appendices/A-google-adk
+      - file: appendices/A-microsoft-agent-framework
+      - file: appendices/A-aws-strands
+      - file: appendices/A-llamaindex-workflows
+      - file: appendices/A-agno
+      - file: appendices/R-framework-comparison
+      - file: appendices/R-agent-protocol-landscape
+  - caption: "Reference"
+    chapters:
+      - file: docs/WORLD
+      - file: docs/CONVENTIONS
+      - file: docs/costs
+      - file: simplified_notebooks/README

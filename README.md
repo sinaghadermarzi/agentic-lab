@@ -1,5 +1,8 @@
 # agentic-lab
 
+[![CI](https://github.com/sinaghadermarzi/agentic-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/sinaghadermarzi/agentic-lab/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A hands-on Jupyter course on agentic systems that builds the machinery by hand before it names a
 single framework. You write the tool loop, the tracing layer, the eval harness, the budget and
 approval gates, the checkpointer, and the context-management tools yourself, in plain Python, each
@@ -44,6 +47,11 @@ than hand-assigned — see [`docs/WORLD.md`](docs/WORLD.md) for the full schema 
 The agent works a fixed toolset — `get_order`, `get_customer`, `search_policy`, `check_inventory`,
 `calc`, and the two risky, gated writes `issue_refund` and `create_replacement` — the same set every
 chapter extends rather than replaces, which is what keeps twenty-one chapters comparable.
+
+**Read it online:** the chapters render as a book at
+[sinaghadermarzi.github.io/agentic-lab](https://sinaghadermarzi.github.io/agentic-lab/) (built by
+`.github/workflows/site.yml` from the same notebooks, without execution). A shorter, plainer twin of
+every chapter lives in [`simplified_notebooks/`](simplified_notebooks/README.md) for a one-day pass.
 
 ## Setup
 
@@ -196,6 +204,7 @@ agentic-lab/
 ├── 00-orientation-and-the-ops-desk.ipynb ... 20-capstone.ipynb   # the 21 numbered chapters
 ├── simplified_notebooks/ # a shorter, plainer version of each of the 21 chapters (same shop, same package)
 ├── appendices/           # 7 framework appendices (A-*.ipynb) + 2 reference pages (R-*.md)
+├── simplified_notebooks/ # a shorter, plainer twin of each chapter (see its README)
 ├── src/shoplab/          # the package you build across the course (loop, tools, controls, ...)
 ├── data/                 # the hand-authored micro-world: products, orders, tickets, policies (JSON)
 ├── mcp_servers/          # the shop's tools exposed over MCP (ch13)
@@ -205,6 +214,8 @@ agentic-lab/
 ├── tests/                # pytest suite guarding shoplab + the data invariants
 ├── docs/                 # CONVENTIONS.md, WORLD.md, costs.md, citations.json
 ├── obs.py                # the Phoenix find-or-start helper
+├── _config.yml, _toc.yml # the Jupyter Book site (jupyter-book build .)
+├── .github/workflows/    # CI (tests + validators) and the Pages build
 └── pyproject.toml        # base deps + every framework extra
 ```
 
@@ -232,3 +243,18 @@ Every external claim is backed by a registered primary source in
 [`docs/citations.json`](docs/citations.json). The two reference pages collect the framework and
 protocol landscapes with their citations: [`appendices/R-framework-comparison.md`](appendices/R-framework-comparison.md)
 and [`appendices/R-agent-protocol-landscape.md`](appendices/R-agent-protocol-landscape.md).
+
+## Tests and CI
+
+Every push runs `scripts/validate_notebooks.py`, `scripts/check_data.py` and the pytest suite, plus the
+chapter 19 end-to-end tests under Node 22 ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
+Locally:
+
+```bash
+python scripts/validate_notebooks.py && python scripts/check_data.py && pytest tests -q
+```
+
+## License and citation
+
+MIT, see [`LICENSE`](LICENSE). To cite the course or the `shoplab` package use
+[`CITATION.cff`](CITATION.cff) (GitHub renders it as a "Cite this repository" button).

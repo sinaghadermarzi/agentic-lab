@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this course or the shoplab package, please cite it as below."
+title: "agentic-lab: a hands-on Jupyter course on agentic systems"
+type: software
+authors:
+  - family-names: Ghadermarzi
+    given-names: Sina
+repository-code: "https://github.com/sinaghadermarzi/agentic-lab"
+license: MIT
+version: 0.1.0
+date-released: 2026-11-02
+keywords:
+  - agents
+  - llm
+  - course
+  - jupyter
+  - evaluation
+abstract: >-
+  A 21-chapter course that builds the machinery of agentic systems by hand
+  (tool loop, tracing, evaluation, budgets, approval gates, checkpoints,
+  context management, MCP, A2A) in one small micro-world, then meets the
+  frameworks as packagings of parts the reader already owns.
